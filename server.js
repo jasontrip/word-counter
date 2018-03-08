@@ -3,26 +3,6 @@ const bodyParser = require('body-parser')
 const natural = require('natural')
 const {lemmatizer} = require('lemmatizer');
 
-console.time("dictionary")
-const dictionary = require('./websters.json')
-console.timeEnd("dictionary")
-
-console.time("word")
-console.log(dictionary["OCEAN"])
-console.timeEnd("word")
-
-console.time("mountain")
-console.log(dictionary["MOUNTAIN"])
-console.timeEnd("mountain")
-
-console.time("zebra")
-console.log(dictionary["ZEBRA"])
-console.timeEnd("zebra")
-
-console.time("happy")
-console.log(dictionary["HAPPY"])
-console.timeEnd("happy")
-
 
 const tokenizer = new natural.WordTokenizer()
 const app = express()
@@ -50,13 +30,15 @@ app.use(bodyParser.json())
 // 	},
 // 	focusList: ['ephemeral', 'variagate', 'castigate']
 // }
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-	res.send('hello')
+	res.sendFile(__dirname + '/public/index.html')
 })
 
-app.get('/brokenUpText', (req, res) => {
-	res.send(req.body)
+app.post('/broken-up-text', (req, res) => {
+	console.log('broken-up-text was called')
+	res.json({hello: "hello"})
 })
 
 const text = "asdf asdf hello Jason tires variagated stuff ./a/" +
@@ -76,6 +58,6 @@ const allThree = tokens.map(token => {
 console.log("raw message: " + text)
 console.log("all 3: " + allThree)
 
-// app.listen(8080)
+app.listen(process.env.PORT || 8080)
 
 
