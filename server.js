@@ -58,6 +58,56 @@ const allThree = tokens.map(token => {
 console.log("raw message: " + text)
 console.log("all 3: " + allThree)
 
-app.listen(process.env.PORT || 8080)
+let server
+
+function runServer() {
+	const port = process.env.PORT || 8080
+	return new Promise((resolve, reject) => {
+		server = app.listen(port, () => {
+			console.log('app on port: ' + port)
+			resolve(server)
+		}).on('error', err => reject(err))
+	})
+}
+
+function closeServer() {
+	return new Promise((resolve, reject) => {
+		console.log('closing server')
+		server.close(err => {
+			if (err) {
+				reject(err)
+				return
+			}
+			resolve()
+		})
+	})
+}
+
+if (require.main === module) {
+	runServer().catch(err => console.error(err))
+}
+
+module.exports = {app, runServer, closeServer}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
