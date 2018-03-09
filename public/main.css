@@ -1,0 +1,36 @@
+body {
+	margin: 0px;
+}
+header * {
+	display: inline-block;
+}
+header {
+	height: 30px;
+	width: 100%;
+	background-color: rgb(237, 242, 249);
+	padding: 5px;
+}
+header h1 {
+	font-size: 26px;
+	margin: 0;
+}
+header .login-nav {
+	float: right;
+	margin: 5px;
+}
+main {
+	width: 100%;
+	padding: 10px;
+}
+.word-and-detail {
+	margin-right: auto;
+	margin-left: auto;
+	width: 400px;
+}
+
+.word-lists {
+	margin-top: 20px;
+	background-color: rgb(237, 242, 249);
+	width: 500px;
+	margin: 0 auto 0 auto;
+}

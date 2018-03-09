@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Words</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
-	
-	Hello World!!<br>
 
-	<br>
-
-	<form class="words-and-text">
-		<label for="js-lookup-word">
-			Enter text
-		</label>
-		<input type="text" id="js-lookup-word"/>
-		<input type="submit" />
-	</form>
-
-	<div class="js-word-detail">
-		word detail here
+<header role="nav">
+	<h1>Words</h1>
+	<div class="login-nav">
+		<button class="log-in">
+				Log In
+		</button>
+		<button class="create-account">
+			Create Account
+		</button>
 	</div>
+</header>
+
+<main role="main">
+	<section class="word-and-detail">
+		<form class="words-and-text">
+			<label for="js-word">
+				lookup word
+			</label>
+			<input type="text" id="js-word"/>
+			<input type="submit" />
+		</form>
+
+		<div class="js-word-detail">
+			word detail here
+		</div>
+
+	</section>
+
 
 	<div class="word-lists">
 		List of words here
 	</div>
+</main>
 
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
