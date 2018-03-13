@@ -2,21 +2,19 @@ const handlers = ( () => {
 
 	const loginHandler = event => {
 		event.preventDefault()
-		console.log('clicked')
-		store.loggedIn = !store.loggedIn
+		store.loggedIn = true
+		render()
+	}
+
+	const logoutHandler = event => {
+		event.preventDefault()
+		store.loggedIn = false
 		render()
 	}
 
 	const lookupWordHandler = event => {
 		event.preventDefault()
-		$.ajax('/broken-up-text', {
-			method: 'POST',
-			data: MOCK_WORD_DATA
-		})
-		.then(res => {
-			console.log(res)
-			$('.word-lists').html(res.hello)
-		})
+		
 	}
 
 	const addTextHandler = event => {
@@ -26,6 +24,7 @@ const handlers = ( () => {
 
 	return {
 		loginHandler,
+		logoutHandler,
 		lookupWordHandler,
 		addTextHandler
 	}
