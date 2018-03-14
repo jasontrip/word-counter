@@ -1,42 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
 	<title>Words</title>
 	<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
 
+
 <header role="nav">
-	<h1>Words</h1>
-	<div class="login-nav">
-		<button class="log-in">
-				Log In
-		</button>
-		<button class="create-account">
-			Create Account
-		</button>
-	</div>
+
 </header>
 
 <main role="main">
 	<section class="word-and-detail">
-		<form class="words-and-text">
-			<label for="js-word">
-				lookup word
-			</label>
-			<input type="text" id="js-word"/>
-			<input type="submit" />
-		</form>
 
-		<div class="js-word-detail">
-			word detail here
-		</div>
+	</section>
+
+	<section class="text-and-added">
 
 	</section>
 
 
 	<div class="word-lists">
-		List of words here
+		
 	</div>
 </main>
 
@@ -44,6 +31,15 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<script type="text/javascript" src="index.js"></script>
+
+<script type="text/javascript" src="/js/store.js"></script>
+<script type="text/javascript" src="/js/views/header.js"></script>
+<script type="text/javascript" src="/js/views/word.js"></script>
+<script type="text/javascript" src="/js/views/words.js"></script>
+<script type="text/javascript" src="/js/views/text.js"></script>
+<script type="text/javascript" src="/js/render.js"></script>
+<script type="text/javascript" src="/js/handlers.js"></script>
+<script type="text/javascript" src="/js/listeners.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

@@ -14,23 +14,41 @@ header h1 {
 	font-size: 26px;
 	margin: 0;
 }
+.username {
+	font-size: 12px;
+}
 header .login-nav {
 	float: right;
 	margin: 5px;
 }
 main {
 	width: 100%;
-	padding: 10px;
+	padding: 0;
 }
-.word-and-detail {
+.word-and-detail, .text-and-added {
 	margin-right: auto;
 	margin-left: auto;
+	margin-top: 20px;
 	width: 400px;
 }
 
+.text-and-added {
+	margin-bottom: 20px;
+}
+.text-to-add {
+	width: 300px;
+	height: 100px;
+} 
+
 .word-lists {
-	margin-top: 20px;
 	background-color: rgb(237, 242, 249);
 	width: 500px;
+	padding: 5px;
 	margin: 0 auto 0 auto;
+}
+.word-in-list {
+	margin: 5px;
+}
+.lemma {
+	font-weight: bold;
 }

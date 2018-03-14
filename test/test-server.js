@@ -11,17 +11,18 @@ chai.use(chaiHttp)
 
 describe('GET /', function() {
 	before(function() {
-		return runServer
+		return runServer()
 	})
 
 	after(function() {
-		return closeServer
+		return closeServer()
 	})
 
 	it('should return a page at /', function() {
 		return chai.request(app)
 			.get('/')
 			.then(function(res) {
+				console.log('something')
 				expect(res).to.have.status(200)
 			})
 	})
