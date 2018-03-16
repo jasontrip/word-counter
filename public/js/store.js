@@ -3,11 +3,12 @@ const store = (() => {
 	return {
 		loggedIn: false,
 		username: 'email@gmail.com',
-		MOCK_WORD_DATA: {
-			"word": "abate",
+		lookupWord: {
+			"enteredWord": "abates",
+			"lemma": "abate",
 			"definition": "(of something perceived as hostile, threatening, or negative) become less intense or widespread."
 		},
-		MOCK_WORD_LIST_DATA: [
+		wordList: [
 			{
 				"lemma": "abate",
 				"definition": "(of something perceived as hostile, threatening, or negative) become less intense or widespread.",

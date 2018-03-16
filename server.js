@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const natural = require('natural')
 const {lemmatizer} = require('lemmatizer');
+const textRouter = require('./routers/text.router')
 
 
 const tokenizer = new natural.WordTokenizer()
@@ -31,6 +32,8 @@ app.use(bodyParser.json())
 // 	focusList: ['ephemeral', 'variagate', 'castigate']
 // }
 app.use(express.static('public'))
+
+app.use('/text', textRouter)
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/public/index.html')

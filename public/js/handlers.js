@@ -14,12 +14,21 @@ const handlers = ( () => {
 
 	const lookupWordHandler = event => {
 		event.preventDefault()
-		
+
+		const $target = $(event.currentTarget).prev('#js-search-word')
+		const searchWord = $target.val().trim()
+		$target.val('')
+
+		api.lookupWord({searchWord})
+			.then(data => {
+				store.lookupWord = data.lookupWord.enteredWord
+				console.log("looked up: " + store.lookupWord)
+			})
 	}
 
 	const addTextHandler = event => {
 		event.preventDefault()
-		console.log('adding text')
+		console.log('add text')
 	}
 
 	return {

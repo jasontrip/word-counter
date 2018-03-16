@@ -2,14 +2,14 @@ const words = ( () => {
 
 	function render() {
 
-		const allWords = store.MOCK_WORD_LIST_DATA
+		const wordList = store.wordList
 
 		let html = ""
-		for (i=0; i<allWords.length; i++) {
+		for (i=0; i<wordList.length; i++) {
 			html = html + `
 				<div class="word-in-list">
-					<span class="lemma">${allWords[i].lemma}</span>
-					(${allWords[i].exposures}): ${allWords[i].definition}
+					<span class="lemma">${wordList[i].lemma}</span>
+					(${wordList[i].exposures}): ${wordList[i].definition}
 				</div>
 			`
 		}
