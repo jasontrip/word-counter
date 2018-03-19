@@ -20,9 +20,10 @@ const handlers = ( () => {
 		$target.val('')
 
 		api.lookupWord({searchWord})
-			.then(data => {
-				store.lookupWord = data.lookupWord.enteredWord
-				console.log("looked up: " + store.lookupWord)
+			.then(res => {
+				// store.lookupWord = res.body.lookupWord.enteredWord
+				// console.log("looked up: " + store.lookupWord)
+				console.log(res)
 			})
 	}
 

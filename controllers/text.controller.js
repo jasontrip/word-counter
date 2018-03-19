@@ -1,3 +1,6 @@
+const google = require('../external-apis/google-api')
+const oxford = require('../external-apis/oxford-api')
+
 const mockData = {
 	lookupWord: {
 		"enteredWord": "going",
@@ -7,7 +10,15 @@ const mockData = {
 }
 
 exports.lookupWord = (req, res) => {
-	mockData.lookupWord.enteredWord = req.body.searchWord
+	const {searchWord} = req.body
+	mockData.lookupWord.enteredWord = searchWord
+	
+	oxford(searchWord)
+		.then(results => res.json(results))
 
-	res.json(mockData)
+
+	// const err = "word not found"
+	// if (err) {
+	// 	return res.status(200).json({err})
+	// }
 }

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const natural = require('natural')
@@ -58,8 +59,8 @@ const allThree = tokens.map(token => {
 // })
 
 
-console.log("raw message: " + text)
-console.log("all 3: " + allThree)
+// console.log("raw message: " + text)
+// console.log("all 3: " + allThree)
 
 let server
 

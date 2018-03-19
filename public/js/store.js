@@ -4,9 +4,10 @@ const store = (() => {
 		loggedIn: false,
 		username: 'email@gmail.com',
 		lookupWord: {
-			"enteredWord": "abates",
-			"lemma": "abate",
-			"definition": "(of something perceived as hostile, threatening, or negative) become less intense or widespread."
+			"error": "",
+			"enteredWord": "",
+			"lemma": "",
+			"definition": ""
 		},
 		wordList: [
 			{

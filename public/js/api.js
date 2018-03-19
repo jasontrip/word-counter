@@ -4,7 +4,7 @@ const api = (() => {
 
 	const lookupWord = searchWord =>
 		axios.post(url, searchWord)
-		.then(res => res.data)
+		.then(res => res)
 
 	const parseText = text => {
 
