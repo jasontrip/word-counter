@@ -7,7 +7,6 @@ const config = {
 }
 
 const oxford = new Dictionary(config)
-console.log(config)
 
 module.exports = word => {
 	return oxford.find(word)

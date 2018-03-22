@@ -1,6 +1,9 @@
 const router = require('express').Router()
 const controller = require('../controllers/text.controller.js')
+const passport = require('passport')
 
-router.post('/lookup-word', controller.lookupWord)
+const jwtAuth = passport.authenticate('jwt', {session: false})
+
+router.post('/lookup-word', jwtAuth, controller.lookupWord)
 
 module.exports = router

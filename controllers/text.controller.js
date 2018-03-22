@@ -10,15 +10,11 @@ const mockData = {
 }
 
 exports.lookupWord = (req, res) => {
+	console.log(req.user)
+	console.log(req.body)
 	const {searchWord} = req.body
 	mockData.lookupWord.enteredWord = searchWord
 	
 	oxford(searchWord)
 		.then(results => res.json(results))
-
-
-	// const err = "word not found"
-	// if (err) {
-	// 	return res.status(200).json({err})
-	// }
 }
