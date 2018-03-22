@@ -3,13 +3,18 @@ const handlers = ( () => {
 	const loginHandler = event => {
 		event.preventDefault()
 		store.loggedIn = true
-		render()
+		render.dom()
 	}
 
 	const logoutHandler = event => {
 		event.preventDefault()
 		store.loggedIn = false
-		render()
+		render.dom()
+	}
+
+	const createAccountHandler = event => {
+		event.preventDefault()
+		console.log('clicked create account')
 	}
 
 	const lookupWordHandler = event => {
@@ -35,6 +40,7 @@ const handlers = ( () => {
 	return {
 		loginHandler,
 		logoutHandler,
+		createAccountHandler,
 		lookupWordHandler,
 		addTextHandler
 	}

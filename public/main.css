@@ -1,54 +1,103 @@
 body {
 	margin: 0px;
 }
-header * {
-	display: inline-block;
-}
-header {
-	height: 40px;
-	width: 100%;
-	background-color: rgb(237, 242, 249);
-	padding: 5px;
-}
-header h1 {
-	font-size: 26px;
-	margin: 0;
-}
-.username {
-	font-size: 12px;
-}
-header .login-nav {
-	float: right;
-	margin: 5px;
-}
 main {
 	width: 100%;
 	padding: 0;
 }
-.word-and-detail, .text-and-added {
+.lookup-word {
+	height: 400px;
+	width: 100%;
+	background-color: rgb(212, 232, 206);
+	padding: 5px;
+	background-image: url("/img/learning.jpg");
+	background-size: cover;
+	color: white;
+}
+.username {
+	font-size: 12px;
+}
+.login-screen {
+	float: right;
+	margin: 15px;
+}
+#username, #userPassword {
+	margin-right: 15px;
+  font-size: 14px;
+	line-height: 30px;
+	width: 175px;
+	background: none;
+	padding-left: 10px;
+	outline: none;
+  border: 1px solid rgb(43, 132, 17);
+  border-radius: 3px;
+}
+.js-log-in, .js-log-out, .js-create-account {
+	font-size: 12px;
+	width: 65px;
+	height: 40px;
+	background-color: rgb(43, 132, 17);
+	border: 1px solid rgb(43, 132, 17);
+	border-radius: 3px;
+	color: white;
+	outline: none;
+}
+.word-and-definition {
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 20px;
+	margin-top: 100px;
 	width: 400px;
 }
-
-.text-and-added {
-	margin-bottom: 20px;
+#js-search-word {
+	line-height: 30px;
+	font-size: 18px;
+	width: 300px;
+	border: 1px solid rgb(43, 132, 17);
+	border-radius: 8px;
+	padding-left: 8px;
+}
+.js-lookup-word {
+	width: 50px;
+	height: 20px;
+	border-radius: 20px;
 }
 .text-to-add {
 	width: 300px;
 	height: 100px;
 } 
-
 .word-lists {
-	background-color: rgb(237, 242, 249);
 	width: 500px;
 	padding: 5px;
-	margin: 0 auto 0 auto;
+	margin: 30px auto 0 auto;
 }
 .word-in-list {
 	margin: 5px;
 }
 .lemma {
 	font-weight: bold;
+}
+.create-account {
+	width: 265px;
+	background-color: rgb(235, 247, 232);
+	padding: 20px;
+	margin: 0 auto 0 auto;
+}
+.create-account input {
+	width: 250px;
+  font-size: 16px;
+	line-height: 30px;
+	background: none;
+	outline: none;
+  border: 1px solid rgb(43, 132, 17);
+  border-radius: 3px;
+  margin: 10px 0 3px 0;
+  padding-left: 10px;
+}
+.create-account .field-feedback {
+	color: red;
+	display: block;
+	margin-bottom: 10px;
+}
+.create-account h1 {
+	margin: 0 0 5px 0;
 }

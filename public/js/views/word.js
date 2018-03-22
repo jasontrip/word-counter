@@ -10,13 +10,11 @@ const word = ( () => {
 
 		const html = `
 			<form class="word-lookup">
-				<label for="js-word">
-					lookup word
-				</label><br>
 				<input type="text"
 					id="js-search-word"
-					placeholder="abates" />
-				<button class="js-lookup-word">lookup</button>
+					placeholder="expand" />
+				<button class="js-lookup-word"> Search
+				</button>
 			</form>
 
 			<div class="js-word-detail">
@@ -24,7 +22,7 @@ const word = ( () => {
 			</div>
 		`
 
-		$('.word-and-detail').html(html)
+		$('.word-and-definition').html(html)
 	}
 
 	return {
