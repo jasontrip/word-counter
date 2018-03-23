@@ -3,10 +3,12 @@ const router = require('express').Router()
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
+const {JWT_SECRET, JWT_EXPIRY} = require('../config')
+
 const createAuthToken = function(user) {
-  return jwt.sign({user}, process.env.JWT_SECRET, {
+  return jwt.sign({user}, JWT_SECRET, {
     subject: user.username,
-    expiresIn: process.env.JWT_EXPIRY,
+    expiresIn: JWT_EXPIRY,
     algorithm: 'HS256'
   })
 }

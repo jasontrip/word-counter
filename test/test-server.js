@@ -7,7 +7,7 @@ const expect = chai.expect
 
 const User = require('../models/users.model')
 const {app, runServer, closeServer} = require('../server')
-const TEST_DATABASE_URL = process.env.TEST_DATABASE_URL
+const {TEST_DATABASE_URL} = require('../config')
 
 mongoose.Promise = global.Promise
 
@@ -18,7 +18,7 @@ function tearDownDb() {
 	return mongoose.connection.dropDatabase()
 }
 
-describe('/user endpoint', function() {
+describe('/users endpoint', function() {
 	
 	describe('POST', function() {
 
@@ -42,7 +42,7 @@ describe('/user endpoint', function() {
 				lastName: 'McTest'
 			}
 			return chai.request(app)
-				.post('/user')
+				.post('/users')
 				.send(testUser)
 				.then(function(res) {
 					expect(res).to.have.status(201)
@@ -60,7 +60,7 @@ describe('/user endpoint', function() {
 				.then(function(isValid) {
 					expect(isValid).to.be.true
 					return chai.request(app)
-						.post('/user')
+						.post('/users')
 						.send(testUser)
 				.then(function(res) {
 					expect(true).to.be(false) // should not get a valid response
@@ -79,7 +79,7 @@ describe('/user endpoint', function() {
 			}
 
 			return chai.request(app)
-				.post('/user')
+				.post('/users')
 				.send(testUser)
 				.then(function(res) {
 					expect(true).to.be(false)
@@ -97,7 +97,7 @@ describe('/user endpoint', function() {
 			}
 
 			return chai.request(app)
-				.post('/user')
+				.post('/users')
 				.send(testUser)
 				.then(function(res) {
 					expect(true).to.be(false)
@@ -116,7 +116,7 @@ describe('/user endpoint', function() {
 			}
 
 			return chai.request(app)
-				.post('/user')
+				.post('/users')
 				.send(testUser)
 				.then(function(res) {
 					expect(true).to.be(false)
@@ -138,7 +138,7 @@ describe('/user endpoint', function() {
 			}
 
 			return chai.request(app)
-				.post('/user')
+				.post('/users')
 				.send(testUser)
 				.then(function(res) {
 					expect(true).to.be(false)

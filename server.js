@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const passport = require('passport')
 
-const PORT = process.env.PORT || 8080
-const DATABASE_URL = process.env.DATABASE_URL
+const {PORT, DATABASE_URL} = require('./config')
+
 const textRouter = require('./routers/text.router')
 const usersRouter = require('./routers/users.router')
 const authRouter = require('./routers/auth.router')
