@@ -1,0 +1,111 @@
+body {
+	margin: 0px;
+}
+body * {
+	box-sizing: border-box;
+}
+main {
+	width: 100%;
+	padding: 0;
+}
+.lookup-word {
+	height: 400px;
+	width: 100%;
+	background-color: rgb(212, 232, 206);
+	padding: 5px;
+	background-image: url("/img/learning.jpg");
+	background-size: cover;
+	color: white;
+}
+.username {
+	font-size: 16px;
+	margin-right: 10px;
+}
+.login-screen {
+	float: right;
+	margin: 15px;
+}
+#username, #userPassword {
+	margin-right: 15px;
+  font-size: 14px;
+	line-height: 30px;
+	width: 175px;
+	color: white;
+	background: none;
+	padding-left: 10px;
+	outline: none;
+  border: 1px solid rgb(43, 132, 17);
+  border-radius: 3px;
+}
+.js-log-in, .js-log-out, .js-create-account {
+	font-size: 12px;
+	width: 65px;
+	height: 40px;
+	background-color: rgb(43, 132, 17);
+	border: 1px solid rgb(43, 132, 17);
+	border-radius: 3px;
+	color: white;
+	outline: none;
+}
+.word-and-definition {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	width: 400px;
+}
+#js-search-word {
+	line-height: 35px;
+	font-size: 18px;
+	width: 320px;
+	border: none;
+	border-radius: 3px;
+	padding-left: 8px;
+}
+.js-lookup-word {
+	width: 50px;
+	height: 20px;
+	border-radius: 20px;
+}
+.text-to-add {
+	width: 300px;
+	height: 100px;
+} 
+.word-lists {
+	width: 500px;
+	padding: 5px;
+	margin: 30px auto 0 auto;
+}
+.word-in-list {
+	margin: 5px;
+}
+.lemma {
+	font-weight: bold;
+}
+.create-account {
+	width: 290px;
+	background-color: rgb(235, 247, 232);
+	padding: 20px;
+	margin: 0 auto 0 auto;
+}
+.create-account input {
+	width: 250px;
+  font-size: 14px;
+	line-height: 35px;
+	background: white;
+	outline: none;
+  border: none;
+  border-radius: 3px;
+  margin: 10px 0 3px 0;
+  padding-left: 10px;
+}
+.create-account .field-feedback {
+	color: red;
+	display: block;
+	margin-bottom: 10px;
+}
+.create-account h1 {
+	margin: 0 0 5px 0;
+}
+.js-create-account {
+	width: 250px;
+}

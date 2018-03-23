@@ -1,34 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<title>Words</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
-	
-	Hello World!!<br>
 
-	<br>
+	<div id='app'></app>
 
-	<form class="words-and-text">
-		<label for="textarea">
-			Enter text
-		</label>
-		<input type="text" class="js-lookup-word"/>
-		<input type="submit" />
-	</form>
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script src='https://unpkg.com/axios/dist/axios.min.js'></script>
 
-	<div class="js-word-detail">
-		word detail here
-	</div>
+	<script type="text/javascript" src="/js/store.js"></script>
+	<script type="text/javascript" src="/js/api.js"></script>
+	<script type="text/javascript" src="/js/views/create-account.js"></script>
+	<script type="text/javascript" src="/js/views/login.js"></script>
+	<script type="text/javascript" src="/js/views/word.js"></script>
+	<script type="text/javascript" src="/js/views/lists.js"></script>
+	<script type="text/javascript" src="/js/views/text.js"></script>
 
-	<div class="word-lists">
-		List of words here
-	</div>
-
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="/js/render.js"></script>
+	<script type="text/javascript" src="/js/handlers.js"></script>
+	<script type="text/javascript" src="/js/listeners.js"></script>
+	<script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
