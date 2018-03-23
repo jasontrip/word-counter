@@ -19,6 +19,7 @@ main {
 }
 .username {
 	font-size: 16px;
+	margin-right: 10px;
 }
 .login-screen {
 	float: right;
