@@ -9,6 +9,7 @@ const handlers = ( () => {
 	const logoutHandler = event => {
 		event.preventDefault()
 		store.loggedIn = false
+		localStorage.removeItem("authToken")
 		render.dom()
 	}
 
@@ -20,12 +21,13 @@ const handlers = ( () => {
 			username,
 			password: $('#newUserPassword').val()
 		}
-		
+
 		api.createAccount(user)
 			.then(_user => {
 				return api.logIn(user)
 					.then(authToken => {
 						store.loggedIn = true
+						localStorage.setItem('authToken', authToken)
 						store.username = user.username
 						render.dom()
 					})
