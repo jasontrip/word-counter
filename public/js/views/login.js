@@ -3,24 +3,36 @@ const login = (() => {
 	function render() {
 
 		const loggedIn = store.loggedIn
+		const username = store.username
 
 		const loggedOutScreen = `
-			<input type="text"
-						 id="username"
-						 placeholder="username"
-						 aria-label="enter username" />
-			<input type="password"
-						 id="userPassword"
-						 placeholder="password"
-						 autocomplete="on" />
-			<button class="js-log-in">Log In</button>
+			<form class="log-in-form">
+				<input type="text"
+							 id="username"
+							 placeholder="username"
+							 aria-label="enter username" 
+							 required />
+				<input type="password"
+							 id="userPassword"
+							 placeholder="password"
+							 autocomplete="on"
+							 minlength="10" 
+							 required/>
+				<button type="submit"
+								class="js-log-in">
+								Log In
+				</button>
+			</form>
 		`
 
 		const loggedInScreen = `
-			<span class="username">${store.username}</span>
-			<button class="js-log-out">
-				Log Out
-			</button>`
+			<form class="log-out-form">
+				<span class="username">${username}</span>
+				<button class="js-log-out">
+					Log Out
+				</button>
+			</form>
+		`
 
 
 		const html = `

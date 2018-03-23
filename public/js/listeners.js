@@ -1,6 +1,6 @@
 function attachListeners() {
-	$('#app').on('click', '.js-log-in', handlers.loginHandler)
-	$('#app').on('click', '.js-log-out', handlers.logoutHandler)
+	$('#app').on('submit', '.log-in-form', handlers.loginHandler)
+	$('#app').on('submit', '.log-out-form', handlers.logoutHandler)
 	$('#app').on('submit', '.create-account-form', handlers.createAccountHandler)
 
 	$('#app').on('click', '.js-lookup-word', handlers.lookupWordHandler)

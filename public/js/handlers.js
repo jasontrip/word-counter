@@ -2,23 +2,37 @@ const handlers = ( () => {
 
 	const loginHandler = event => {
 		event.preventDefault()
-		store.loggedIn = true
-		render.dom()
+		const user = {
+			username: $('#username').val(),
+			password: $('#userPassword').val()
+		}
+		api.logIn(user)
+			.then(authToken => {
+				localStorage.setItem('authToken', authToken)
+				store.loggedIn = true
+				store.username = user.username
+				
+				render.dom()
+			})
+			.catch(err => {
+				localStorage.removeItem("authToken")
+				store.loggedIn = false
+				store.username = ''
+			})
 	}
 
 	const logoutHandler = event => {
 		event.preventDefault()
-		store.loggedIn = false
 		localStorage.removeItem("authToken")
+		store.loggedIn = false
+		
 		render.dom()
 	}
 
 	const createAccountHandler = event => {
 		event.preventDefault()
-		const username = $('#newUsername').val()
-		store.username = username
 		const user = {
-			username,
+			username: $('#newUsername').val(),
 			password: $('#newUserPassword').val()
 		}
 
