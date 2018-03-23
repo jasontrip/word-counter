@@ -54,11 +54,11 @@ main {
 	width: 400px;
 }
 #js-search-word {
-	line-height: 30px;
+	line-height: 35px;
 	font-size: 18px;
-	width: 300px;
-	border: 1px solid rgb(43, 132, 17);
-	border-radius: 8px;
+	width: 320px;
+	border: none;
+	border-radius: 3px;
 	padding-left: 8px;
 }
 .js-lookup-word {
