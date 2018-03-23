@@ -2,7 +2,7 @@ const store = (() => {
 
 	return {
 		loggedIn: false,
-		username: 'email@gmail.com',
+		username: '',
 		lookupWord: {
 			"error": "",
 			"enteredWord": "",

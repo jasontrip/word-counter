@@ -1,6 +1,9 @@
 body {
 	margin: 0px;
 }
+body * {
+	box-sizing: border-box;
+}
 main {
 	width: 100%;
 	padding: 0;
@@ -15,7 +18,7 @@ main {
 	color: white;
 }
 .username {
-	font-size: 12px;
+	font-size: 16px;
 }
 .login-screen {
 	float: right;
@@ -77,18 +80,18 @@ main {
 	font-weight: bold;
 }
 .create-account {
-	width: 265px;
+	width: 290px;
 	background-color: rgb(235, 247, 232);
 	padding: 20px;
 	margin: 0 auto 0 auto;
 }
 .create-account input {
 	width: 250px;
-  font-size: 16px;
-	line-height: 30px;
-	background: none;
+  font-size: 14px;
+	line-height: 35px;
+	background: white;
 	outline: none;
-  border: 1px solid rgb(43, 132, 17);
+  border: none;
   border-radius: 3px;
   margin: 10px 0 3px 0;
   padding-left: 10px;
@@ -100,4 +103,7 @@ main {
 }
 .create-account h1 {
 	margin: 0 0 5px 0;
+}
+.js-create-account {
+	width: 250px;
 }

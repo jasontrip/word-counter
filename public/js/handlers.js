@@ -14,13 +14,30 @@ const handlers = ( () => {
 
 	const createAccountHandler = event => {
 		event.preventDefault()
-		console.log('clicked create account')
+		const username = $('#newUsername').val()
+		store.username = username
+		const user = {
+			username,
+			password: $('#newUserPassword').val()
+		}
+		
+		api.createAccount(user)
+			.then(_user => {
+				return api.logIn(user)
+					.then(authToken => {
+						store.loggedIn = true
+						store.username = user.username
+						render.dom()
+					})
+			})
+			.catch(err => {
+				console.log("error: " + err)
+			})
 	}
 
 	const lookupWordHandler = event => {
 		event.preventDefault()
-
-		const $target = $(event.currentTarget).prev('#js-search-word')
+		const $targetUsername = $(event.currentTarget).prev('#js-search-word')
 		const searchWord = $target.val().trim()
 		$target.val('')
 

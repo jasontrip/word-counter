@@ -20,7 +20,7 @@ app.use(bodyParser.json())
 app.use(express.static('public'))
 
 app.use('/text', textRouter)
-app.use('/user', usersRouter)
+app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 
 const jwtAuth = passport.authenticate('jwt', {session: false})
