@@ -144,7 +144,6 @@ describe('/users endpoint', function() {
 					expect(true).to.be(false)
 				})
 				.catch(function(err) {
-					console.log(err)
 					expect(err).to.have.status(422)
 					expect(err.response).to.be.json
 					expect(err.response.body.message).to
