@@ -5,28 +5,21 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 const UserSchema = mongoose.Schema({
-	username: {
-		type: String,
-		required: true,
-		unique: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
-	firstName: {
-		type: String,
-		default: ''},
-	lastName: {
-		type: String,
-		default: ''
-	}
+	username: {type: String, required: true, unique: true},
+	password: {type: String, required: true},
+	firstName: {type: String, default: ''},
+	lastName: {type: String, default: ''},
+	wordList: [{
+		word: {type: String},
+		count: {type: Number}
+	}]
 })
 UserSchema.methods.serialize = function() {
 	return {
 		username: this.username,
 		firstName: this.firstName,
-		lastName: this.lastName
+		lastName: this.lastName,
+		wordList: this.wordList
 	}
 }
 UserSchema.methods.validatePassword = function(password) {

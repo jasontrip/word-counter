@@ -3,7 +3,7 @@ const login = (() => {
 	function render() {
 
 		const loggedIn = store.loggedIn
-		const username = store.username
+		const username = store.user? store.user.username:''
 
 		const loggedOutScreen = `
 			<form class="log-in-form">

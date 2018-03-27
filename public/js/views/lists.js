@@ -8,14 +8,14 @@ const lists = ( () => {
 			createAccount.render()
 
 		} else {
-				const wordList = store.wordList
+				const wordList = store.user.wordList
 
 				let html = ""
 				for (i=0; i<wordList.length; i++) {
 					html = html + `
 						<div class="word-in-list">
-							<span class="lemma">${wordList[i].lemma}</span>
-							(${wordList[i].exposures}): ${wordList[i].definition}
+							<span class="lemma">${wordList[i].word}</span>
+							(${wordList[i].count})
 						</div>
 					`
 				}

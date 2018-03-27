@@ -23,7 +23,7 @@ const api = (() => {
 		const url = window.location.origin + '/auth/login'
 		return axios.post(url, user)
 			.then(res => {
-				return res.data.authToken
+				return res.data
 			})
 	}
 
