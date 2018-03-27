@@ -11,6 +11,7 @@ const createAccount = (() => {
 							 placeholder="username or email"
 							 aria-label="enter username"
 							 required />
+				<div class="field-validation-feedback"></div>
 				<input type="password"
 							 id="newUserPassword"
 							 minlength="10"
@@ -18,13 +19,12 @@ const createAccount = (() => {
 							 placeholder="password"
 							 autocomplete="off" 
 							 required />
-				<span class="field-feedback">&nbsp;</span>
+				<div class="field-validation-feedback"></div>
 				<button type="submit" class="js-create-account">Create Account</button>
 			</form>
 		</div>
 	`)
 	}
-
 	return {
 		render
 	}

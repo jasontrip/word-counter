@@ -16,7 +16,7 @@ const api = (() => {
 	const createAccount = user => {
 		const url = window.location.origin + '/users'
 		return axios.post(url, user)
-			.then(res => res.data)
+			.then(res => res.data) // success returns a user
 	}
 
 	const logIn = user => {

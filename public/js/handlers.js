@@ -31,9 +31,11 @@ const handlers = ( () => {
 
 	const createAccountHandler = event => {
 		event.preventDefault()
+		$newUsername = $('#newUsername')
+		$newUserPassword = $('#newUserPassword')
 		const user = {
-			username: $('#newUsername').val(),
-			password: $('#newUserPassword').val()
+			username: $newUsername.val(),
+			password: $newUserPassword.val()
 		}
 
 		api.createAccount(user)
@@ -47,8 +49,17 @@ const handlers = ( () => {
 					})
 			})
 			.catch(err => {
-				console.log("error: " + err)
+				const message = err.response.data.message
+				if (err.response.data.location === 'username') {
+					$newUsername.next('.field-validation-feedback').html(message)
+				} else if (err.response.data.location === 'password') {
+					$newUserPassword.next('.field-validation-feedback').html(message)
+				}
 			})
+	}
+
+	const newUserFocusHandler = event => {
+		$(event.currentTarget).next('.field-validation-feedback').html('')
 	}
 
 	const lookupWordHandler = event => {
@@ -74,6 +85,7 @@ const handlers = ( () => {
 		loginHandler,
 		logoutHandler,
 		createAccountHandler,
+		newUserFocusHandler,
 		lookupWordHandler,
 		addTextHandler
 	}
