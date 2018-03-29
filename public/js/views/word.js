@@ -2,25 +2,32 @@ const word = ( () => {
 
 	function render() {
 
-		const {error, enteredWord, lemma, definition} = store.lookupWord
+		const user = store.user
+		const searchWord = store.searchWord
 
-		const errorOrDefinition = error
-			? error
-			: `${lemma}: ${definition}`
-
-		const html = `
+		let html = `
 			<form class="word-lookup">
 				<input type="text"
 					id="js-search-word"
-					placeholder="expand" />
+					placeholder="enter word" />
 				<button class="js-lookup-word"> Search
 				</button>
 			</form>
-
-			<div class="js-word-detail">
-				${lemma ? errorOrDefinition : ""}
-			</div>
 		`
+
+		if (searchWord && searchWord.results) {
+			html += `
+				<div class="js-word-detail">
+					${searchWord.word}: ${searchWord.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]}
+				</div>
+			`
+		} else if (searchWord && !searchWord.results) {
+			html += `
+				<div class="js-word-detail">
+					${searchWord.word} is not in the Oxford Dictionary.
+				</div>
+			`
+		}
 
 		$('.word-and-definition').html(html)
 	}

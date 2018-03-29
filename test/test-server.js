@@ -39,12 +39,7 @@ describe('/users endpoint', function() {
 				username: 'testUser',
 				password: '12345678910',
 				firstName: 'Test',
-				lastName: 'McTest',
-				wordList: [
-					{word: 'hello', count: 25},
-					{word: 'hi', count: 4},
-					{word: 'interest', count: 1}
-				]
+				lastName: 'McTest'
 			}
 			return chai.request(app)
 				.post('/users')
@@ -60,9 +55,6 @@ describe('/users endpoint', function() {
 					expect(user.username).to.equal(testUser.username)
 					expect(user.firstName).to.equal(testUser.firstName)
 					expect(user.lastName).to.equal(testUser.lastName)
-					expect(user.wordList.length).to.equal(testUser.wordList.length)
-					expect(user.wordList[0].word).to.equal(testUser.wordList[0].word)
-					expect(user.wordList[0].count).to.equal(testUser.wordList[0].count)
 					return user.validatePassword(testUser.password)
 				})
 				.then(function(isValid) {
@@ -76,6 +68,32 @@ describe('/users endpoint', function() {
 				.catch(function(err) {
 					expect(err).to.have.status(422)
 				})
+				})
+		})
+
+		it('should add a word to a user.wordlist and save it', function() {
+			const testUser = {
+				username: 'testUser',
+				password: '12345678910',
+				firstName: 'Test',
+				lastName: 'McTest'
+			}
+			const testWord = {word: 'hello', count: 25}
+
+			return chai.request(app)
+				.post('/users')
+				.send(testUser)
+				.then(function(res) {
+					expect(res).to.have.status(201)
+					return User.findOne({username: res.body.username})
+				})
+				.then(function(user) {
+					expect(user.username).to.equal(testUser.username)
+					user.wordList.push(testWord)
+					return user.save()
+				})
+				.then(function(user) {
+					expect(user.wordList[0].word).to.equal(testWord.word)
 				})
 		})
 

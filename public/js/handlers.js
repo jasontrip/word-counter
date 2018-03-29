@@ -10,7 +10,6 @@ const handlers = ( () => {
 		api.logIn(user)
 			.then(res => {
 				localStorage.setItem('authToken', res.authToken)
-				store.loggedIn = true
 				store.user = res.user
 
 				render.dom()
@@ -25,7 +24,8 @@ const handlers = ( () => {
 	const logoutHandler = event => {
 		event.preventDefault()
 		localStorage.removeItem("authToken")
-		store.loggedIn = false
+		delete store.user
+		delete store.searchWord
 		
 		render.dom()
 	}
@@ -42,9 +42,8 @@ const handlers = ( () => {
 		api.createAccount(user)
 			.then(_user => {
 				return api.logIn(user)
-					.then(authToken => {
-						store.loggedIn = true
-						localStorage.setItem('authToken', authToken)
+					.then(res => {
+						localStorage.setItem('authToken', res.authToken)
 						store.user = _user
 						render.dom()
 					})
@@ -65,15 +64,17 @@ const handlers = ( () => {
 
 	const lookupWordHandler = event => {
 		event.preventDefault()
-		const $targetUsername = $(event.currentTarget).prev('#js-search-word')
-		const searchWord = $target.val().trim()
-		$target.val('')
+		const $searchWord = $(event.currentTarget).prev('#js-search-word')
+		const searchWord = $searchWord.val().trim()
+		$searchWord.val('')
 
-		api.lookupWord({searchWord})
-			.then(res => {
-				// store.lookupWord = res.body.lookupWord.enteredWord
-				// console.log("looked up: " + store.lookupWord)
-				console.log(res)
+		store.searchWord = {word: searchWord}
+		api.lookupWord(searchWord)
+			.then(data => {
+				store.searchWord.results = data.results
+				store.user = data.user
+
+				render.dom()
 			})
 	}
 

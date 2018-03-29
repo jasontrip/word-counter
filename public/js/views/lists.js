@@ -2,11 +2,10 @@ const lists = ( () => {
 
 	function render() {
 
-		const loggedIn = store.loggedIn
+		const user = store.user
 
-		if (!loggedIn) {
+		if (!user) {
 			createAccount.render()
-
 		} else {
 				const wordList = store.user.wordList
 
