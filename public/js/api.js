@@ -8,7 +8,7 @@ const api = (() => {
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
 		.then(res => res.data)
-		.catch(err => err)
+		// .catch(err => err)
 	}
 
 	const parseText = text => {

@@ -5,7 +5,7 @@ const login = (() => {
 		const user = store.user
 
 		let html = ''
-		if (user) {
+		if (user.username) {
 			html = `
 				<form class="log-out-form">
 					<span class="username">${user.username}</span>

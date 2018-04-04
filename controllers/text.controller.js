@@ -10,9 +10,6 @@ exports.lookupWord = (req, res) => {
 
 	User.findOne({username: req.user.username})
 		.then(_user => {
-			return _user
-		})
-		.then(_user => {
 			user = _user
 			return oxford(searchWord)
 		})

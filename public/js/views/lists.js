@@ -4,7 +4,7 @@ const lists = ( () => {
 
 		const user = store.user
 
-		if (!user) {
+		if (!user.username) {
 			createAccount.render()
 		} else {
 				const wordList = store.user.wordList

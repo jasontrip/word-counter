@@ -15,13 +15,13 @@ const word = ( () => {
 			</form>
 		`
 
-		if (searchWord && searchWord.results) {
+		if (searchWord.word && searchWord.results.length) {
 			html += `
 				<div class="js-word-detail">
 					${searchWord.word}: ${searchWord.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]}
 				</div>
 			`
-		} else if (searchWord && !searchWord.results) {
+		} else if (searchWord.word && searchWord.results.length === 0) {
 			html += `
 				<div class="js-word-detail">
 					${searchWord.word} is not in the Oxford Dictionary.

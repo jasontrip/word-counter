@@ -10,22 +10,25 @@ const handlers = ( () => {
 		api.logIn(user)
 			.then(res => {
 				localStorage.setItem('authToken', res.authToken)
-				store.user = res.user
-
+				store.user = Object.assign({}, store.user, res.user)
+				console.log(store.user)
 				render.dom()
 			})
 			.catch(err => {
 				localStorage.removeItem("authToken")
-				store.loggedIn = false
-				store.user = {}
+				store.user.reset()
 			})
 	}
 
 	const logoutHandler = event => {
 		event.preventDefault()
 		localStorage.removeItem("authToken")
-		delete store.user
-		delete store.searchWord
+		store.user.reset()
+		store.searchWord = {
+			word: "",
+			assessment: 0,
+			results: []
+		}
 		
 		render.dom()
 	}
@@ -44,11 +47,12 @@ const handlers = ( () => {
 				return api.logIn(user)
 					.then(res => {
 						localStorage.setItem('authToken', res.authToken)
-						store.user = _user
+						store.user = Object.assign({}, store.user, _user)
 						render.dom()
 					})
 			})
 			.catch(err => {
+				debugger
 				const message = err.response.data.message
 				if (err.response.data.location === 'username') {
 					$newUsername.next('.field-validation-feedback').html(message)
@@ -72,10 +76,11 @@ const handlers = ( () => {
 		api.lookupWord(searchWord)
 			.then(data => {
 				store.searchWord.results = data.results
-				store.user = data.user
+				// store.user = data.user - update user in store, only retrieve results from api call
 
 				render.dom()
 			})
+			.catch()
 	}
 
 	const addTextHandler = event => {
