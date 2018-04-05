@@ -11,5 +11,4 @@ const oxford = new Dictionary(config)
 module.exports = word => {
 	return oxford.find(word)
 		.then(result => result)
-		.catch(err => console.log(err))
 }

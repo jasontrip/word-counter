@@ -8,34 +8,11 @@ exports.lookupWord = (req, res) => {
 
 	let user, oxfordResults
 
-	User.findOne({username: req.user.username})
-		.then(_user => {
-			user = _user
-			return oxford(searchWord)
-		})
+	oxford(searchWord)
 		.then(results => {
-			if (!results) {
-				return user
-			}
-
-			oxfordResults = results.results
-			existingWord = user.wordList.find(w => w.word === searchWord)
-
-			if (existingWord) {
-				existingWord.count++
-			} else {
-				user.wordList.push({
-					word: searchWord,
-					count: 1
-				})
-			}
-			
-			return user.save()
+			res.status(200).json(results)
 		})
-		.then(_user => {
-			res.json({
-				user,
-				results: oxfordResults
-			})
+		.catch(err => {
+			res.status(204).send()
 		})
 }

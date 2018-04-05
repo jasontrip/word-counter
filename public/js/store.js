@@ -17,12 +17,14 @@ const store = (() => {
 
 	const searchWord = {
 		word: "",
-		assessment: 0,
-		results: []
+		definition: ""
 	}
+
+	const searchWordList = []
 
 	return {
 		user,
-		searchWord
+		searchWord,
+		searchWordList
 	}
 })()

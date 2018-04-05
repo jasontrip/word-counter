@@ -9,19 +9,20 @@ const word = ( () => {
 			<form class="word-lookup">
 				<input type="text"
 					id="js-search-word"
-					placeholder="enter word" />
+					placeholder="search the Oxford Dictionary" />
 				<button class="js-lookup-word"> Search
 				</button>
 			</form>
 		`
 
-		if (searchWord.word && searchWord.results) {
+		if (searchWord.word && searchWord.definition) {
 			html += `
 				<div class="js-word-detail">
-					${searchWord.word}: ${searchWord.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]}
+					<span class="searched-word">${searchWord.word}</span> -
+						${searchWord.definition}
 				</div>
 			`
-		} else if (searchWord.word && !searchWord.results) {
+		} else if (searchWord.word && !searchWord.definition) {
 			html += `
 				<div class="js-word-detail">
 					${searchWord.word} is not in the Oxford Dictionary.

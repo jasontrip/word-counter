@@ -4,6 +4,6 @@ const passport = require('passport')
 
 const jwtAuth = passport.authenticate('jwt', {session: false})
 
-router.post('/lookup-word', jwtAuth, controller.lookupWord)
+router.post('/lookup-word', controller.lookupWord)
 
 module.exports = router

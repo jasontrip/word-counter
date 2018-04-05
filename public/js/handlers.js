@@ -74,13 +74,21 @@ const handlers = ( () => {
 		store.searchWord = {word: searchWord}
 		api.lookupWord(searchWord)
 			.then(data => {
-				store.searchWord.results = data.results
-				store.user = Object.assign({}, store.user, data.user)
-				// update user in store, only retrieve results from api call
+				if (data.results) {
+					store.searchWord.definition = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
+					
+					const	existingWord = store.searchWordList.find(w => w.word === searchWord)
+					existingWord
+						? existingWord.count++
+						: store.searchWordList.push({
+								word: searchWord,
+								count: 1
+							})
+				}
 
 				render.dom()
+				$('#js-search-word').focus()
 			})
-			.catch()
 	}
 
 	const addTextHandler = event => {

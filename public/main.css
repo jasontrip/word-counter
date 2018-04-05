@@ -8,8 +8,11 @@ main {
 	width: 100%;
 	padding: 0;
 }
-.lookup-word {
-	height: 400px;
+.landing-page {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
 	width: 100%;
 	background-color: rgb(212, 232, 206);
 	padding: 5px;
@@ -17,6 +20,51 @@ main {
 	background-size: cover;
 	color: white;
 }
+.landing-page-content-wrapper {
+	margin: 100px 10px 10px 10px;
+}
+.oxford-lookup {
+	float: left;
+	margin: 20px 40px 20px 60px;
+	border-bottom: 1px dotted rgb(3, 189, 242);
+}
+
+.oxford-logo {
+	height: 50px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.word-and-definition {
+	width: 400px;
+}
+
+.js-word-detail {
+	margin-top: 10px;
+	min-height: 80px;
+}
+.searched-word {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.word-list {
+	font-size: 24px;
+	margin: 20px 20px 10px 20px;
+}
+.word-list .word-count {
+	font-size: 16px;
+}
+
+.create-account {
+	width: 290px;
+	color: black;
+	background-color: rgb(235, 247, 232);
+	padding: 20px;
+	float: right;
+	margin: 30px 20px 20px 20px;
+}
+
 .username {
 	font-size: 16px;
 	margin-right: 10px;
@@ -47,14 +95,9 @@ main {
 	color: white;
 	outline: none;
 }
-.word-and-definition {
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 100px;
-	width: 400px;
-}
+
 #js-search-word {
-	line-height: 35px;
+	line-height: 40px;
 	font-size: 18px;
 	width: 320px;
 	border: none;
@@ -62,31 +105,21 @@ main {
 	padding-left: 8px;
 }
 .js-lookup-word {
-	width: 50px;
-	height: 20px;
-	border-radius: 20px;
+	font-size: 12px;
+	width: 65px;
+	height: 43px;
+	background-color: rgb(3, 189, 242);
+	border: 1px solid rgb(3, 189, 242);
+	border-radius: 3px;
+	color: white;
+	outline: none;
+	vertical-align: top;
 }
 .text-to-add {
 	width: 300px;
 	height: 100px;
 } 
-.word-lists {
-	width: 500px;
-	padding: 5px;
-	margin: 30px auto 0 auto;
-}
-.word-in-list {
-	margin: 5px;
-}
-.lemma {
-	font-weight: bold;
-}
-.create-account {
-	width: 290px;
-	background-color: rgb(235, 247, 232);
-	padding: 20px;
-	margin: 0 auto 0 auto;
-}
+
 .create-account input {
 	width: 250px;
   font-size: 14px;

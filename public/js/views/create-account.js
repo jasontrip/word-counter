@@ -1,8 +1,7 @@
 const createAccount = (() => {
 
 	function render() {
-		$('.word-lists').html(`
-		<div class="create-account">
+		$('.create-account').html(`
 			<form class="create-account-form">
 				<h1>Create Account</h1>
 				<input type="text"
@@ -22,8 +21,7 @@ const createAccount = (() => {
 				<div class="field-validation-feedback"></div>
 				<button type="submit" class="js-create-account">Create Account</button>
 			</form>
-		</div>
-	`)
+		`)
 	}
 	return {
 		render
