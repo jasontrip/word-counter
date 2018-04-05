@@ -52,7 +52,6 @@ const handlers = ( () => {
 					})
 			})
 			.catch(err => {
-				debugger
 				const message = err.response.data.message
 				if (err.response.data.location === 'username') {
 					$newUsername.next('.field-validation-feedback').html(message)
@@ -76,7 +75,8 @@ const handlers = ( () => {
 		api.lookupWord(searchWord)
 			.then(data => {
 				store.searchWord.results = data.results
-				// store.user = data.user - update user in store, only retrieve results from api call
+				store.user = Object.assign({}, store.user, data.user)
+				// update user in store, only retrieve results from api call
 
 				render.dom()
 			})

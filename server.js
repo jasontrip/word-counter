@@ -11,6 +11,7 @@ const usersRouter = require('./routers/users.router')
 const authRouter = require('./routers/auth.router')
 const {localStrategy, jwtStrategy} = require('./strategies')
 
+mongoose.Promise = global.Promise
 const app = express()
 
 passport.use(localStrategy)
