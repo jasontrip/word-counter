@@ -19,11 +19,13 @@ const login = (() => {
 				<form class="log-in-form">
 					<input type="text"
 								 id="username"
+								 value="jason"
 								 placeholder="username"
 								 aria-label="enter username" 
 								 required />
 					<input type="password"
 								 id="userPassword"
+								 value="asdfasdfasdf"
 								 placeholder="password"
 								 autocomplete="on"
 								 minlength="10" 

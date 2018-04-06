@@ -2,6 +2,7 @@
 const router = require('express').Router()
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
+const User = require('../models/users.model')
 
 const {JWT_SECRET, JWT_EXPIRY} = require('../config')
 
@@ -16,11 +17,38 @@ const createAuthToken = function(user) {
 const localAuth = passport.authenticate('local', {session: false})
 // The user provides a username and password to login
 router.post('/login', localAuth, (req, res) => {
-  const authToken = createAuthToken(req.user.serialize())
-  res.json({
-  	authToken: authToken,
-  	user: req.user.serialize()
-  })
+
+  User.findOne({username:req.user.username})
+    .then( user => {
+      const {searchWordList} = req.body
+
+      searchWordList.forEach(searchWord => {
+        let index
+        const word = user.wordList.find( (w, i) => {
+          index = i
+          return w.word === searchWord.word
+        })
+
+        if (word) {
+          word.count += searchWord.count
+          // need to update array with new value
+          user.wordList[index] = word
+        } else {
+          user.wordList.push(searchWord)
+        }
+
+      })
+      return user.save()
+      console.log(user, req.body)
+    })
+    .then(_user => {
+      const authToken = createAuthToken(_user.serialize())
+      res.json({
+        authToken: authToken,
+        user: _user.serialize()
+      })
+    })
+
 })
 
 const jwtAuth = passport.authenticate('jwt', {session: false})

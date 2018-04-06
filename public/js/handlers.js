@@ -5,7 +5,8 @@ const handlers = ( () => {
 
 		const user = {
 			username: $('#username').val(),
-			password: $('#userPassword').val()
+			password: $('#userPassword').val(),
+			searchWordList: store.searchWordList
 		}
 		api.logIn(user)
 			.then(res => {
@@ -37,17 +38,19 @@ const handlers = ( () => {
 		event.preventDefault()
 		$newUsername = $('#newUsername')
 		$newUserPassword = $('#newUserPassword')
-		const user = {
+		const newUser = {
 			username: $newUsername.val(),
-			password: $newUserPassword.val()
+			password: $newUserPassword.val(),
+			addWords: store.searchWordList
 		}
 
-		api.createAccount(user)
+		api.createAccount(newUser)
 			.then(_user => {
-				return api.logIn(user)
+				return api.logIn(newUser)
 					.then(res => {
 						localStorage.setItem('authToken', res.authToken)
 						store.user = Object.assign({}, store.user, _user)
+						store.searchWordList = []
 						render.dom()
 					})
 			})
