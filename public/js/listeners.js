@@ -6,4 +6,6 @@ function attachListeners() {
 
 	$('#app').on('click', '.js-lookup-word', handlers.lookupWordHandler)
 	$('#app').on('click', '.js-add-text', handlers.addTextHandler)
+
+	$('#app').on('click', '.hamburger-icon', handlers.toggleLeftNavHandler)
 }

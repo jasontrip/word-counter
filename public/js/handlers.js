@@ -96,12 +96,17 @@ const handlers = ( () => {
 		console.log('add text')
 	}
 
+	const toggleLeftNavHandler = event => {
+		$('.left-nav').toggleClass('hidden')
+	}
+
 	return {
 		loginHandler,
 		logoutHandler,
 		createAccountHandler,
 		newUserFocusHandler,
 		lookupWordHandler,
-		addTextHandler
+		addTextHandler,
+		toggleLeftNavHandler
 	}
 })()
