@@ -174,10 +174,16 @@ main .word-list-item .assessment {
 	color: #fff;
   background: #5a9216;
 }
+.parse-text {
+	background: #5a9216;
+	border: #5a9216;
+}
 
 
 .top-nav {
 	width: 100%;
+	min-width: 365px;
+	height: 54px;
 	margin-left: 0;
 	z-index: 1;
 }
@@ -267,12 +273,45 @@ main .exposures {
 
 .dark-overlay {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
   z-index: 5;
   -webkit-transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
   transition: all 600ms cubic-bezier(0.200, 0.965, 0.000, 1.005);
+}
+.dialog-box {
+	z-index: 6;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 400px;
+	height: 500px;
+	margin: 80px auto 20px auto;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px;
+  border-radius: 2px;
+}
+#text-to-parse {
+	margin: 20px 50px 20px 50px;
+	width: 300px;
+	height: 400px;
+	border-radius: 5px;
+  border: solid 2px #5a9216;
+}
+.parse-text {
+	font-size: 12px;
+	width: 250px;
+	height: 43px;
+	border: 1px solid;
+	border-radius: 3px;
+	color: white;
+	outline: none;
+	vertical-align: top;
+	margin: 0 75px 10px 75px;
 }
 
 .add-circle {
@@ -281,7 +320,7 @@ main .exposures {
     border-radius: 50%;
     position: fixed;
     right: 60px;
-    top: 47px;
+    top: 25px;
     height: 56px;
     width: 56px;
     box-shadow: 0 5px 5px rgba(126, 111, 111, 0.39);

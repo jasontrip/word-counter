@@ -21,10 +21,17 @@ const store = (() => {
 	}
 
 	const searchWordList = []
+	const addWordList = null
+	const dialogBoxScreen = "hidden"
+	const sortProperty = 'word' // word, assessment, exposure
+
 
 	return {
 		user,
 		searchWord,
-		searchWordList
+		searchWordList,
+		addWordList,
+		dialogBoxScreen,
+		sortProperty
 	}
 })()

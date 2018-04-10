@@ -8,4 +8,8 @@ function attachListeners() {
 	$('#app').on('click', '.js-add-text', handlers.addTextHandler)
 
 	$('#app').on('click', '.hamburger-icon', handlers.toggleLeftNavHandler)
+	$('#app').on('click', '.add-circle', handlers.showAddWordsDialogHandler)
+	$('#app').on('click', '.dark-overlay', handlers.closeDialogHandler)
+	$('#app').on('click', '.parse-text', handlers.parseTextHandler)
+	$('#app').on('click', '.menu-level-2 li', handlers.leftNavHandler)
 }

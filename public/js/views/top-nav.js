@@ -6,7 +6,7 @@ const topNav = (() => {
 			<div class="current-view">English > Oxford Dictionary</div>
 
 			<div class="right-nav">
-				<div class="userIcon"><i class="material-icons">person_outline</i></div>
+				<div class="userIcon"><i class="material-icons">person</i></div>
 			</div>
 		`
 

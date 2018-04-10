@@ -12,7 +12,7 @@ const handlers = ( () => {
 			.then(res => {
 				localStorage.setItem('authToken', res.authToken)
 				store.user = Object.assign({}, store.user, res.user)
-				console.log(store.user)
+				store.searchWordList = []
 				render.dom()
 			})
 			.catch(err => {
@@ -99,8 +99,39 @@ const handlers = ( () => {
 		console.log('add text')
 	}
 
+	const parseTextHandler = event => {
+		event.preventDefault()
+		
+		const textToParse = $('#text-to-parse').val()
+
+		api.parseText(textToParse)
+			.then(addWordList => {
+				store.addWordList = addWordList
+				dialogBox.render()
+			})
+
+	}
+
 	const toggleLeftNavHandler = event => {
 		$('.left-nav').toggleClass('hidden')
+	}
+
+	const showAddWordsDialogHandler = event => {
+		store.dialogBoxScreen = ''
+		dialogBox.render()
+	}
+
+	const closeDialogHandler = event => {
+		store.dialogBoxScreen = 'hidden'
+		dialogBox.render()
+	}
+
+	const leftNavHandler = event => {
+		const $leftNavItem = $(event.currentTarget)
+		if ($leftNavItem.parent().data('header') == 'sort') {
+			store.sortProperty = $leftNavItem.data('item')
+		}
+		wordList.render()
 	}
 
 	return {
@@ -110,6 +141,10 @@ const handlers = ( () => {
 		newUserFocusHandler,
 		lookupWordHandler,
 		addTextHandler,
-		toggleLeftNavHandler
+		parseTextHandler,
+		toggleLeftNavHandler,
+		showAddWordsDialogHandler,
+		closeDialogHandler,
+		leftNavHandler
 	}
 })()

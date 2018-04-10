@@ -12,7 +12,13 @@ const api = (() => {
 	}
 
 	const parseText = text => {
-
+		const url = window.location.origin + '/text/parse'
+		return axios.post(
+			url,
+			{text},
+			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
+		)
+		.then(res => res.data)
 	}
 
 	const createAccount = user => {

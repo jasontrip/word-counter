@@ -14,7 +14,7 @@ module.exports = text => {
 	  .analyzeSyntax({document: document})
 	  .then(results => {
 	    const syntax = results[0]
-	    return results[0]
+	    return results
 	  })
 	  .catch(err => {
 	    console.error('ERROR:', err)

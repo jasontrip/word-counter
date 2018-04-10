@@ -5,6 +5,7 @@ const render = (() => {
 
 		if (user.username) {
 			$('#app').html(`
+				<div class="modal"></div>
 				<nav class="left-nav hidden"></nav>
 
 				<div class="page-wrap">
