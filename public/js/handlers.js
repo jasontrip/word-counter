@@ -114,6 +114,8 @@ const handlers = ( () => {
 
 	const toggleLeftNavHandler = event => {
 		$('.left-nav').toggleClass('hidden')
+		$('.word-list').toggleClass('indent-for-left-nav')
+		$('.top-nav').toggleClass('indent-for-left-nav')
 	}
 
 	const showAddWordsDialogHandler = event => {
