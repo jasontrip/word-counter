@@ -12,4 +12,8 @@ function attachListeners() {
 	$('#app').on('click', '.dark-overlay', handlers.closeDialogHandler)
 	$('#app').on('click', '.parse-text', handlers.parseTextHandler)
 	$('#app').on('click', '.menu-level-2 li', handlers.leftNavHandler)
+
+	$('#app').on('input change', '.assessment-slider', handlers.updateAssessmentValueHandler)
+	$('#app').on('touchend mouseup', '.assessment-slider', handlers.updateAssessmentHandler)
+
 }

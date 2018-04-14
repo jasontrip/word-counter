@@ -15,7 +15,17 @@ const api = (() => {
 		const url = window.location.origin + '/text/parse'
 		return axios.post(
 			url,
-			{text},
+			text,
+			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
+		)
+		.then(res => res.data)
+	}
+
+	const updateWordAssessment = word => {
+		const url = window.location.origin + '/users/word'
+		return axios.post(
+			url,
+			{word},
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
 		.then(res => res.data)
@@ -39,7 +49,8 @@ const api = (() => {
 		lookupWord,
 		parseText,
 		createAccount,
-		logIn
+		logIn,
+		updateWordAssessment
 	}
 
 

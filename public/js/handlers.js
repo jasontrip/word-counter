@@ -136,6 +136,21 @@ const handlers = ( () => {
 		wordList.render()
 	}
 
+	const updateAssessmentValueHandler = event => {
+		const $assessmentSlider = $(event.currentTarget)
+		$assessmentSlider
+			.next('.assessment-value')
+			.html($assessmentSlider.val())
+	}
+
+	const updateAssessmentHandler = event => {
+		const newAssessment = $(event.currentTarget).val()
+		api.updateWordAssessment(newAssessment)
+			.then(word => {
+				console.log(word)
+			})
+	}
+
 	return {
 		loginHandler,
 		logoutHandler,
@@ -147,6 +162,8 @@ const handlers = ( () => {
 		toggleLeftNavHandler,
 		showAddWordsDialogHandler,
 		closeDialogHandler,
-		leftNavHandler
+		leftNavHandler,
+		updateAssessmentValueHandler,
+		updateAssessmentHandler
 	}
 })()

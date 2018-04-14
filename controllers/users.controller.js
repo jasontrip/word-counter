@@ -1,6 +1,14 @@
 const validate = require('../utility/validate')
 const User = require('../models/users.model')
 
+exports.addUserWord = (req, res) => {
+
+
+
+	res.send(req.body)
+
+}
+
 exports.addUser = (req, res) => {
 
 	//validate input
