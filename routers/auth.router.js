@@ -22,22 +22,24 @@ router.post('/login', localAuth, (req, res) => {
     .then( user => {
       const {searchWordList} = req.body
 
-      searchWordList.forEach(searchWord => {
-        let index
-        const word = user.wordList.find( (w, i) => {
-          index = i
-          return w.word === searchWord.word
+      if (searchWordList) {
+        searchWordList.forEach(searchWord => {
+          let index
+          const word = user.wordList.find( (w, i) => {
+            index = i
+            return w.word === searchWord.word
+          })
+
+          if (word) {
+            word.count += searchWord.count
+            // need to update array with new value
+            user.wordList[index] = word
+          } else {
+            user.wordList.push(searchWord)
+          }
+
         })
-
-        if (word) {
-          word.count += searchWord.count
-          // need to update array with new value
-          user.wordList[index] = word
-        } else {
-          user.wordList.push(searchWord)
-        }
-
-      })
+      }
       return user.save()
       console.log(user, req.body)
     })

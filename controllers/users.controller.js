@@ -11,21 +11,23 @@ exports.addUserWord = (req, res) => {
 
 exports.addUser = (req, res) => {
 
-	//validate input
-	const requiredFields = ['username', 'password']
-	const stringFields = ['username', 'password', 'firstName', 'lastName']
-	const trimmedFields = ['username', 'password']
-	const sizedFields = {
-		username: {
-			min: 1
-		},
-		password: {
-			min: 10,
-			max: 72 // 72 is max bcrypt length
+	const validationRules = 
+	{
+		requiredFields: ['username', 'password'],
+		stringFields: ['username', 'password', 'firstName', 'lastName'],
+		trimmedFields: ['username', 'password'],
+		sizedFields: {
+			username: {
+				min: 1
+			},
+			password: {
+				min: 10,
+				max: 72 // 72 is max bcrypt length
+			}
 		}
 	}
-	const invalid = validate(req.body, requiredFields,
-									stringFields, trimmedFields, sizedFields)
+
+	const invalid = validate(req.body, validationRules)
 	if (invalid) return res.status(422).json(invalid)
 
 	// create user if username is unique

@@ -1,5 +1,9 @@
-module.exports = function(data, requiredFields, 
-												stringFields, trimmedFields, sizedFields) {
+module.exports = function(data, validateFields) {
+
+	const {requiredFields,
+				stringFields,
+				trimmedFields,
+				sizedFields} = validateFields
 
 	const errorJson = (message, location) => {
 		return {
