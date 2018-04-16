@@ -4,7 +4,8 @@ const utility = ( () => {
 
 		const wordListCopy = store.user.wordList.slice()
 		switch (store.sortProperty) {
-			case 'word': return wordListCopy.sort((a,b) => {
+			case 'word':
+				return wordListCopy.sort((a,b) => {
 					if (a.word.toUpperCase() < b.word.toUpperCase()) {
 						return -1
 					}
@@ -12,13 +13,20 @@ const utility = ( () => {
 						return 1
 					}
 					return 0
-			})
-			case 'exposure': return wordListCopy.sort((a,b) => {
+				})
+			case 'exposure':
+				return wordListCopy.sort((a,b) => {
 					return a.count - b.count
-			})
-			case 'assessment': return wordListCopy.sort((a,b) => {
+				})
+			case 'assessment':
+				return wordListCopy.sort((a,b) => {
+			    if (isNaN(a.assessment)){
+			        return 1;
+			    } else if (isNaN(b.assessment)) {
+			        return -1;
+			    } 
 					return a.assessment - b.assessment
-			})
+				})
 		}
 
 	}
