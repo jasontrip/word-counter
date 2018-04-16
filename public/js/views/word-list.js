@@ -10,6 +10,7 @@ const wordList = (() => {
 					<div class="assessment">
 						<input type="range"
 							class="assessment-slider"
+							data-word="${word.word}"
 							value="${word.assessment?word.assessment:'0'}"/>
 						<span class="assessment-value">
 							${word.assessment?word.assessment:''}

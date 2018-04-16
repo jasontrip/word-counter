@@ -7,7 +7,7 @@ const api = (() => {
 			{searchWord},
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
-		.then(res => res.data)
+		.then(res => res.status)
 		// .catch(err => err)
 	}
 
@@ -15,7 +15,7 @@ const api = (() => {
 		const url = window.location.origin + '/text/parse'
 		return axios.post(
 			url,
-			text,
+			{text},
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
 		.then(res => res.data)
@@ -23,12 +23,12 @@ const api = (() => {
 
 	const updateWordAssessment = word => {
 		const url = window.location.origin + '/users/word'
-		return axios.post(
+		return axios.put(
 			url,
-			{word},
+			word,
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
-		.then(res => res.data)
+		.then(res => res)
 	}
 
 	const createAccount = user => {

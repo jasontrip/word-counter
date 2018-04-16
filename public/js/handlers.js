@@ -144,10 +144,21 @@ const handlers = ( () => {
 	}
 
 	const updateAssessmentHandler = event => {
-		const newAssessment = $(event.currentTarget).val()
-		api.updateWordAssessment(newAssessment)
-			.then(word => {
-				console.log(word)
+		const $assessmentSlider = $(event.currentTarget)
+		const updatedWord =
+		{
+			word: $assessmentSlider.data('word'),
+			assessment: $assessmentSlider.val()
+		}
+
+		api.updateWordAssessment(updatedWord)
+			.then(res => {
+				const word = store.user.wordList.find(w => w.word === updatedWord.word)
+				if (res.status != 200) {
+					$assessmentSlider.val(word.assessment)
+					return
+				}
+				word.assessment = updatedWord.assessment
 			})
 	}
 
