@@ -10,7 +10,6 @@ exports.lookupWord = (req, res) => {
 
 	oxford(searchWord)
 		.then(results => {
-			console.log(results)
 			res.status(200).json(results)
 		})
 		.catch(err => {
