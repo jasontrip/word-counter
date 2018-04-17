@@ -7,7 +7,7 @@ const api = (() => {
 			{searchWord},
 			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
 		)
-		.then(res => res.status)
+		.then(res => res.data)
 		// .catch(err => err)
 	}
 
