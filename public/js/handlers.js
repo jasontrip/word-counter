@@ -78,7 +78,6 @@ const handlers = ( () => {
 		api.lookupWord(searchWord)
 			.then(data => {
 				if (data.results) {
-					debugger
 					store.searchWord.definition = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0]
 					
 					const	existingWord = store.searchWordList.find(w => w.word === searchWord)
