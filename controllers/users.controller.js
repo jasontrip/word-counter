@@ -1,6 +1,46 @@
 const validate = require('../utility/validate')
 const User = require('../models/users.model')
 
+exports.addUserWords = (req, res) => {
+	// jwt protected endpoint, so must have user
+	const {username} = req.user
+
+	const validationRules = {
+		requiredFields: ['words']
+	}
+	const invalid = validate(req.body, validationRules)
+	if (invalid) return res.status(422).json(invalid)
+
+	const {words} = req.body
+
+	return User.findOne(
+			{username: username},
+			{wordList: 1}
+		).then(_user => {
+			words.forEach(newWord => {
+				const existingWord = _user.wordList.find(w => w.word === newWord.word)
+				if (existingWord) {
+					if (newWord.assessment) {
+						(existingWord.assessment)
+							? existingWord.assessment = existingWord.assessment + newWord.assessment
+							: existingWord.assessment = newWord.assessment
+					}
+					if (newWord.count) {
+						existingWord.count = existingWord.count + newWord.count
+					}
+				} else {
+					_user.wordList.push(newWord)
+				}
+			})
+			return _user.save()
+		}).then( () => {
+			res.status(200).send()
+		}).catch( err => {
+			res.status(400).send("is this the error? " + err)
+		})
+
+}
+
 exports.updateUserWord = (req, res) => {
 	// jwt protected endpoint, so must have user
 	const {username} = req.user

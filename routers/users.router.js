@@ -6,5 +6,6 @@ const jwtAuth = passport.authenticate('jwt', {session: false})
 
 router.post('/', controller.addUser)
 router.put('/word', jwtAuth, controller.updateUserWord)
+router.post('/multiple-words', jwtAuth, controller.addUserWords)
 
 module.exports = router
