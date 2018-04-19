@@ -30,6 +30,10 @@ const handlers = ( () => {
 			assessment: 0,
 			results: []
 		}
+
+		store.searchWordList = []
+		store.addWordList = null
+		store.sortProperty = 'word'
 		
 		render.dom()
 	}
@@ -125,6 +129,7 @@ const handlers = ( () => {
 
 	const closeDialogHandler = event => {
 		store.dialogBoxScreen = 'hidden'
+		store.addWordList = null
 		dialogBox.render()
 	}
 
