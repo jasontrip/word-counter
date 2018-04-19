@@ -9,14 +9,23 @@ const dialogBox = (() => {
 
 	function confirmWordsToAdd() {
 		return `
-			<div>
+			<div class="can-add-list">
 				${store.addWordList.canAdd.map(word => {
 					return `
-						<span class="can-add-word">
+						<div class="can-add-word">
+							<a class="remove-word" data-word="${word}">
+								X
+							</a>
 							${word}
-						</span>`
+						</div>`
 				}).join('')}
-			</div>`
+			</div>
+			<div>
+				<button class="add-these-words">
+					Add these words
+				</button>
+			</div>
+			`
 	}
 
 	function render() {

@@ -20,6 +20,25 @@ main {
 	padding: 0;
 	margin: 0;
 }
+
+/* colors */
+.top-nav  {
+	background-color: #000000;
+	color: #fff;
+}
+main .word-list-item .assessment {
+	color: #5a9216;
+}
+.add-circle {
+	color: #fff;
+  background: #5a9216;
+}
+.parse-text, .add-these-words {
+	background: #5a9216;
+	border: #5a9216;
+}
+
+/* landing-page */
 .landing-page {
 	position: fixed;
 	top: 0;
@@ -166,22 +185,6 @@ main {
 ul {
 	list-style-type: none;
 	padding: 0;
-}
-
-.top-nav  {
-	background-color: #000000;
-	color: #fff;
-}
-main .word-list-item .assessment {
-	color: #5a9216;
-}
-.add-circle {
-	color: #fff;
-  background: #5a9216;
-}
-.parse-text {
-	background: #5a9216;
-	border: #5a9216;
 }
 
 
@@ -343,7 +346,7 @@ main .exposures {
 	border-radius: 5px;
   border: solid 2px #5a9216;
 }
-.parse-text {
+.parse-text, .add-these-words {
 	font-size: 12px;
 	width: 250px;
 	height: 43px;
@@ -353,6 +356,24 @@ main .exposures {
 	outline: none;
 	vertical-align: top;
 	margin: 0 75px 10px 75px;
+}
+.can-add-list {
+	margin: 20px;
+}
+.can-add-word {
+	display: inline-block;
+	font-size: 14px;
+	color: #5a9216;
+	border: 1px solid gray;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	margin: 7px 5px 0 0;
+}
+.remove-word {
+	font-size: 14px;
+	color: black;
+	cursor: pointer;
+	margin-right: 3px;
 }
 
 .add-circle {

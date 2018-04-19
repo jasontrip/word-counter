@@ -98,9 +98,9 @@ const handlers = ( () => {
 			})
 	}
 
-	const addTextHandler = event => {
+	const addParsedWordsHandler = event => {
 		event.preventDefault()
-		console.log('add text')
+		console.log('add parsed words')
 	}
 
 	const parseTextHandler = event => {
@@ -171,13 +171,27 @@ const handlers = ( () => {
 		$('#newUsername').focus()
 	}
 
+	const removeWordHandler = event => {
+		const $wordToRemove = $(event.currentTarget)
+		const wordToRemove = $wordToRemove.data('word')
+
+		store.addWordList.canAdd.splice(
+			store.addWordList.canAdd.indexOf(wordToRemove), 1)
+
+		if (store.addWordList.canAdd.length === 0) {
+			store.addWordList = null
+		}
+
+		dialogBox.render()
+	}
+
 	return {
 		loginHandler,
 		logoutHandler,
 		createAccountHandler,
 		newUserFocusHandler,
 		lookupWordHandler,
-		addTextHandler,
+		addParsedWordsHandler,
 		parseTextHandler,
 		toggleLeftNavHandler,
 		showAddWordsDialogHandler,
@@ -185,6 +199,7 @@ const handlers = ( () => {
 		leftNavHandler,
 		updateAssessmentValueHandler,
 		updateAssessmentHandler,
-		createAccountLinkHandler
+		createAccountLinkHandler,
+		removeWordHandler
 	}
 })()
