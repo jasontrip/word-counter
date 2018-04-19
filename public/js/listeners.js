@@ -5,6 +5,7 @@ function attachListeners() {
 	$('#app').on('focus', '#newUsername, #newUserPassword', handlers.newUserFocusHandler)
 
 	$('#app').on('click', '.js-lookup-word', handlers.lookupWordHandler)
+	$('#app').on('click', '.create-account-link', handlers.createAccountLinkHandler)
 	$('#app').on('click', '.js-add-text', handlers.addTextHandler)
 
 	$('#app').on('click', '.hamburger-icon', handlers.toggleLeftNavHandler)

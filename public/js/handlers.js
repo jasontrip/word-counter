@@ -45,7 +45,7 @@ const handlers = ( () => {
 		const newUser = {
 			username: $newUsername.val(),
 			password: $newUserPassword.val(),
-			addWords: store.searchWordList
+			wordList: store.searchWordList
 		}
 
 		api.createAccount(newUser)
@@ -167,6 +167,10 @@ const handlers = ( () => {
 			})
 	}
 
+	const createAccountLinkHandler = event => {
+		$('#newUsername').focus()
+	}
+
 	return {
 		loginHandler,
 		logoutHandler,
@@ -180,6 +184,7 @@ const handlers = ( () => {
 		closeDialogHandler,
 		leftNavHandler,
 		updateAssessmentValueHandler,
-		updateAssessmentHandler
+		updateAssessmentHandler,
+		createAccountLinkHandler
 	}
 })()

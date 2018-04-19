@@ -49,7 +49,7 @@ exports.addUser = (req, res) => {
 	if (invalid) return res.status(422).json(invalid)
 
 	// create user if username is unique
-	let {username, password, firstName='', lastName=''} = req.body
+	let {username, password, firstName='', lastName='', wordList} = req.body
 	firstName = firstName.trim()
 	lastName = lastName.trim()
 
@@ -71,7 +71,8 @@ exports.addUser = (req, res) => {
 				username,
 				password: hash,
 				firstName,
-				lastName
+				lastName,
+				wordList
 			})
 		})
 		.then(user => {

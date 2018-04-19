@@ -4,9 +4,9 @@ const searchWordList = ( () => {
 
 		const {searchWordList} = store
 
-		let html = ""
+		let wordsHtml = ""
 		for (i=0; i<searchWordList.length; i++) {
-			html = html + `
+			wordsHtml = wordsHtml + `
 				<div class="word-in-list">
 					${searchWordList[i].word}
 					<span class="word-count">
@@ -16,7 +16,26 @@ const searchWordList = ( () => {
 			`
 		}
 
-		$('.word-list').html(html)
+		function createAccountWithWordsHtml() {
+			
+			if (searchWordList.length > 0) {
+				return `
+					<div class="create-account-invitation">
+						Want to save
+							${(searchWordList.length === 1)?'this':'these'}
+							word${(searchWordList.length === 1)?'':'s'}?
+						<a class="create-account-link">
+							Create an account!
+						</a>
+					</div>
+				`
+
+			}
+			return ""
+		}
+
+
+		$('.word-list').html(wordsHtml + createAccountWithWordsHtml())
 	}
 
 	return {
