@@ -21,6 +21,17 @@ const api = (() => {
 		.then(res => res.data)
 	}
 
+	const addParsedWords = words => {
+		const url = window.location.origin + '/users/multiple-words'
+		return axios.post(
+			url,
+			{words},
+			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
+		)
+		.then(res => res)
+		.catch(err => err)
+	}
+
 	const updateWordAssessment = word => {
 		const url = window.location.origin + '/users/word'
 		return axios.put(
@@ -48,6 +59,7 @@ const api = (() => {
 	return {
 		lookupWord,
 		parseText,
+		addParsedWords,
 		createAccount,
 		logIn,
 		updateWordAssessment

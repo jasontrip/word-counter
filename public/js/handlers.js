@@ -100,7 +100,38 @@ const handlers = ( () => {
 
 	const addParsedWordsHandler = event => {
 		event.preventDefault()
-		console.log('add parsed words')
+		const parsedWords = store.addWordList.canAdd.map(word => {
+			return {
+				word: word,
+				count: 1
+			}
+		})
+
+		api.addParsedWords(parsedWords)
+			.then(res => {
+				parsedWords.forEach(newWord => {
+					const existingWord = store.user.wordList.find(w => w.word === newWord.word)
+					if (existingWord) {
+						if (newWord.assessment) {
+							(existingWord.assessment)
+								? existingWord.assessment += newWord.assessment
+								: existingWord.assessment = newWord.assessment
+						}
+						if (newWord.count) {
+							existingWord.count += newWord.count
+						}
+					} else {
+						store.user.wordList.push(newWord)
+					}
+				})
+
+			store.dialogBoxScreen = 'hidden'
+			store.addWordList = null
+
+			dialogBox.render()
+			wordList.render()
+
+			})
 	}
 
 	const parseTextHandler = event => {
