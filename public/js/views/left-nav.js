@@ -16,13 +16,6 @@ const leftNav = (() => {
 						<li data-item="exposure">Exposure</li>
 					</ul>
 				</li>
-
-				<li><div class="nav-header">Context</div>
-					<ul class="menu-level-2" data-header="Context">
-						<li data-item="oxford">Oxford Dictionary</li>
-						<li data-item="unknown">Unknown</li>
-					</ul>
-				</li>
 		`
 
 
