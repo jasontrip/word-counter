@@ -12,10 +12,6 @@ const UserSchema = mongoose.Schema({
 		count: {type: Number},
 		assessment: {type: Number}
 	}]
- // wordList: [{
- //    type: mongoose.Schema.Types.ObjectId,
- //    ref: 'Word'
- //  }]
 })
 UserSchema.methods.serialize = function() {
 	return {
