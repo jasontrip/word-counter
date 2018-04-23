@@ -29,10 +29,22 @@ const render = (() => {
 					<header class="login-screen"></header>
 
 					<div class="landing-page-content-wrapper">
-						<div class="oxford-lookup">
-							<img class="oxford-logo" src="/img/oxford_logo.svg" />
-							<section class="word-and-definition"></section>
-							<section class="word-list"></section>
+						<div class="app-explanation-and-oxford clearfix">
+							<div class="app-explanation">
+								<div class="app-title">Word Collector</div>
+								<div class="one-line-explanation">
+									Keep track of all the words you know
+									and rate how well you know them.
+								</div>
+								<div class="demo-account">
+									Demo account: username 'test', password: 'test123456'
+								</div>
+							</div>
+							<div class="oxford-lookup">
+								<img class="oxford-logo" src="/img/oxford_logo.svg" />
+								<section class="word-and-definition"></section>
+								<section class="word-list"></section>
+							</div>
 						</div>
 						<div class="create-account"></div>
 					</div>

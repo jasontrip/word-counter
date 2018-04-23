@@ -50,18 +50,52 @@ main .word-list-item .assessment {
 	background-image: url("/img/learning.jpg");
 	background-size: cover;
 	color: white;
+	overflow: scroll;
 }
 .landing-page-content-wrapper {
-	margin: 100px 10px 10px 10px;
+	margin: 100px 0px 10px 0px;
 }
+
+.clearfix:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.app-explanation {
+	width: 100%;
+	min-height: 225px;
+	background-color: rgba(43, 132, 17, .15);
+	padding: 20px;
+	margin: 0 auto 0 auto;
+}
+.app-title {
+	font-size: 45px;
+	width: 300px;
+	font-weight: bold;
+	color: rgb(43, 132, 17);
+	margin: 0 auto 0 auto;
+}
+.one-line-explanation {
+	font-size: 16px;
+	text-align: center;
+	margin-top: 5px;
+}
+.demo-account {
+	font-size: 14px;
+	text-align: center;
+	margin-top: 45px;
+}
+
 .oxford-lookup {
-	float: left;
-	margin: 20px 40px 20px 60px;
+	width: 400px;
+	margin: 60px auto 20px auto;
 	border-bottom: 1px dotted rgb(3, 189, 242);
 }
 
 .oxford-logo {
-	height: 50px;
+	height: 40px;
 	display: block;
 	margin-bottom: 10px;
 }
@@ -92,8 +126,7 @@ main .word-list-item .assessment {
 	color: black;
 	background-color: rgb(235, 247, 232);
 	padding: 20px;
-	float: right;
-	margin: 30px 20px 20px 20px;
+	margin: 60px auto 20px auto;
 }
 .create-account-invitation {
 	font-size: 14px;
