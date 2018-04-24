@@ -93,7 +93,7 @@ const handlers = ( () => {
 							})
 				}
 
-				render.dom()
+				searchWordList.render()
 				$('#js-search-word').focus()
 			})
 	}
