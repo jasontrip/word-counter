@@ -24,6 +24,7 @@ const store = (() => {
 	const addWordList = null
 	const dialogBoxScreen = "hidden"
 	const sortProperty = 'word' // word, assessment, exposure
+	const loginError = ''
 
 
 	return {
@@ -32,6 +33,7 @@ const store = (() => {
 		searchWordList,
 		addWordList,
 		dialogBoxScreen,
-		sortProperty
+		sortProperty,
+		loginError
 	}
 })()

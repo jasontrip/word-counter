@@ -13,11 +13,15 @@ const handlers = ( () => {
 				localStorage.setItem('authToken', res.authToken)
 				store.user = Object.assign({}, store.user, res.user)
 				store.searchWordList = []
+				store.loginError = ''
 				render.dom()
 			})
 			.catch(err => {
 				localStorage.removeItem("authToken")
 				store.user.reset()
+				store.loginError = 'invalid user credentials'
+				login.render()
+				$('#username').focus()
 			})
 	}
 
@@ -129,6 +133,7 @@ const handlers = ( () => {
 			store.addWordList = null
 
 			dialogBox.render()
+			topNav.render()
 			wordList.render()
 
 			})

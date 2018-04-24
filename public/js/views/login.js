@@ -33,6 +33,9 @@ const login = (() => {
 									Log In
 					</button>
 				</form>
+				<div class="login-error">
+					${store.loginError}
+				</div>
 			`
 		}
 
