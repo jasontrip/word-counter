@@ -4,7 +4,21 @@ const wordList = (() => {
 
 		const sorted = utility.sort()
 
-		const html = sorted.map(word => {
+		const wordListHeadings = `
+			<div class="word-list-heading">
+				<div class="assessment-heading">
+					assessment
+				</div>
+				<div class="word-heading">
+					word
+				</div>
+				<div class="exposures-heading">
+					exposures
+				</div>
+			</div>
+		`
+
+		const wordListItems = sorted.map(word => {
 			return `
 				<div class="word-list-item">
 					<div class="assessment">
@@ -19,13 +33,12 @@ const wordList = (() => {
 					<div class="word">${word.word}</div>
 					<div class="exposures">
 						<span class="exposure-count">${word.count}</span>
-						exposure${(word.count > 1)?'s':''}
 					</div>
 				</div>
 			`
-		})
+		}).join('')
 
-		$('main .word-list').html(html)
+		$('main .word-list').html(wordListHeadings + wordListItems)
 	}
 
 	return {

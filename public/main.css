@@ -29,6 +29,9 @@ main {
 main .word-list-item .assessment {
 	color: #5a9216;
 }
+.word-list-heading {
+	color: #5a9216;
+}
 .add-circle {
 	color: #fff;
   background: #5a9216;
@@ -358,6 +361,23 @@ ul {
 .word-list {
 	transition: margin-left .5s;
 }
+.word-list-heading {
+	width: 400px;
+}
+.word-list-heading * {
+	display: inline-block;
+}
+.assessment-heading {
+  width: 80px;
+  margin: 10px 15px 10px 11px;
+}
+.word-heading {
+	width: 150px;
+	padding-left: 10px;
+}
+.exposure-heading {
+
+}
 main {
 	margin-top: 65px;
 }
@@ -453,7 +473,7 @@ main .exposures {
     border-radius: 50%;
     position: fixed;
     right: 120px;
-    top: 25px;
+    top: 20px;
     height: 56px;
     width: 56px;
     box-shadow: 0 5px 5px rgba(126, 111, 111, 0.39);
