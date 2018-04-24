@@ -22,23 +22,19 @@ exports.parse = (req, res) => {
 	const {text} = req.body
 	const canAdd = []
 	const cannotAdd = []
+	const containsNumber = /\d/
 
 	google(text)
 		.then(results => {
 			results[0].tokens.map(token => {
-				console.log(token)
-				token.partOfSpeech.tag == 'X' || token.partOfSpeech.tag == 'PUNCT'
+				token.partOfSpeech.tag == 'X' ||
+					token.partOfSpeech.tag == 'PUNCT' ||
+					containsNumber.test(token.lemma)
 				?cannotAdd.push(token.lemma)
 				:canAdd.push(token.lemma)
 			})
 
-
 			res.status(200).json({canAdd, cannotAdd})
 		})
-
-	const addWordList = {
-		canAdd,
-		cannotAdd
-	}
 	
 }
