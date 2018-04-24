@@ -36,7 +36,7 @@ exports.addUserWords = (req, res) => {
 		}).then( () => {
 			res.status(200).send()
 		}).catch( err => {
-			res.status(400).send("is this the error? " + err)
+			res.status(400).send(err)
 		})
 
 }

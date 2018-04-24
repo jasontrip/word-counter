@@ -26,7 +26,7 @@ app.use('/auth', authRouter)
 
 const jwtAuth = passport.authenticate('jwt', {session: false})
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
 	res.sendFile(__dirname + '/public/index.html')
 })
 
