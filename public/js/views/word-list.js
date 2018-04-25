@@ -6,11 +6,11 @@ const wordList = (() => {
 
 		const wordListHeadings = `
 			<div class="word-list-heading">
-				<div class="assessment-heading">
-					assessment
-				</div>
 				<div class="word-heading">
 					word
+				</div>
+				<div class="assessment-heading">
+					assessment
 				</div>
 				<div class="exposures-heading">
 					exposures
@@ -21,6 +21,11 @@ const wordList = (() => {
 		const wordListItems = sorted.map(word => {
 			return `
 				<div class="word-list-item">
+					<div class="delete-word"
+						data-word="${word.word}">
+						<i class="material-icons delete-word-icon">clear</i>
+					</div>
+					<div class="word">${word.word}</div>
 					<div class="assessment">
 						<input type="range"
 							class="assessment-slider"
@@ -30,7 +35,6 @@ const wordList = (() => {
 							${word.assessment?word.assessment:''}
 						</span>
 					</div>
-					<div class="word">${word.word}</div>
 					<div class="exposures">
 						<span class="exposure-count">${word.count}</span>
 					</div>

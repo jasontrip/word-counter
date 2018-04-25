@@ -14,6 +14,7 @@ function attachListeners() {
 	$('#app').on('click', '.parse-text', handlers.parseTextHandler)
 	$('#app').on('click', '.add-these-words', handlers.addParsedWordsHandler)
 	$('#app').on('click', '.remove-word', handlers.removeWordHandler)
+	$('#app').on('click', '.delete-word', handlers.deleteWordHandler)
 	$('#app').on('click', '.menu-level-2 li', handlers.leftNavHandler)
 
 	$('#app').on('input change', '.assessment-slider', handlers.updateAssessmentValueHandler)

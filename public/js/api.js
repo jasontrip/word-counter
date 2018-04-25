@@ -33,7 +33,7 @@ const api = (() => {
 	}
 
 	const updateWordAssessment = word => {
-		const url = window.location.origin + '/users/word'
+		const url = window.location.origin + '/users/words'
 		return axios.put(
 			url,
 			word,
@@ -56,13 +56,22 @@ const api = (() => {
 			})
 	}
 
+	const deleteWord = word => {
+		const url = window.location.origin + '/users/words/' + word
+		return axios.delete(
+			url,
+			{headers: {'Authorization': 'Bearer ' + localStorage.authToken}}
+		).then(res => res)
+	}
+
 	return {
 		lookupWord,
 		parseText,
 		addParsedWords,
 		createAccount,
 		logIn,
-		updateWordAssessment
+		updateWordAssessment,
+		deleteWord
 	}
 
 

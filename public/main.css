@@ -368,22 +368,24 @@ ul {
 .word-list-heading * {
 	display: inline-block;
 }
+.word-heading {
+	width: 30px;
+	margin-left: 50px;
+}
 .assessment-heading {
   width: 80px;
-  margin: 10px 15px 10px 11px;
+  margin: 10px 15px 10px 110px;
 }
-.word-heading {
-	width: 150px;
-	padding-left: 10px;
-}
-.exposure-heading {
-
+.delete-word-icon {
+	font-size: 16px;
+	cursor: pointer;
+	color: gray;
 }
 main {
 	margin-top: 65px;
 }
 main .word-list-item {
-	padding: 5px 10px 5px 10px;
+	padding: 5px 10px 5px 20px;
 }
 main .word-list-item * {
 	display: inline-block;

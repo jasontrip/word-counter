@@ -17,6 +17,7 @@ const handlers = ( () => {
 				render.dom()
 			})
 			.catch(err => {
+				console.log(err)
 				localStorage.removeItem("authToken")
 				store.user.reset()
 				store.loginError = 'invalid user credentials'
@@ -221,6 +222,22 @@ const handlers = ( () => {
 		dialogBox.render()
 	}
 
+	const deleteWordHandler = event => {
+		const word = $(event.currentTarget).data('word')
+
+		api.deleteWord(word)
+			.then(res => {
+				store.user.wordList.splice(store.user.wordList.indexOf(
+					store.user.wordList.find( w => w.word === word)
+				), 1)
+		
+				wordList.render()
+				topNav.render()
+			})
+			.catch(res => {
+
+			})
+	}
 	return {
 		loginHandler,
 		logoutHandler,
@@ -236,6 +253,7 @@ const handlers = ( () => {
 		updateAssessmentValueHandler,
 		updateAssessmentHandler,
 		createAccountLinkHandler,
-		removeWordHandler
+		removeWordHandler,
+		deleteWordHandler
 	}
 })()

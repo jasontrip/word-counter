@@ -41,7 +41,7 @@ exports.addUserWords = (req, res) => {
 
 }
 
-exports.updateUserWord = (req, res) => {
+exports.updateWord = (req, res) => {
 	// jwt protected endpoint, so must have user
 	const {username} = req.user
 
@@ -61,6 +61,33 @@ exports.updateUserWord = (req, res) => {
 		.then(_user => {
 			const _word = _user.wordList.find(w => w.word === word)
 			_word.assessment = assessment
+			_user.save()
+		})
+		.then( () => {
+			res.status(200).send()
+		})
+}
+
+exports.deleteWord = (req, res) => {
+	// jwt protected endpoint, so must have user
+	const {username} = req.user
+
+	const validationRules = {
+		requiredFields: ['word'],
+	}
+	const invalid = validate(req.params, validationRules)
+	if (invalid) return res.status(422).json(invalid)
+
+	const {word} = req.params
+
+	return User.findOne(
+			{username: username},
+			{wordList: 1}
+		)
+		.then(_user => {
+			_user.wordList.splice(_user.wordList.indexOf(
+				_user.wordList.find(w => w.word === word)
+			), 1)
 			_user.save()
 		})
 		.then( () => {
