@@ -80,17 +80,12 @@ exports.deleteWord = (req, res) => {
 
 	const {word} = req.params
 
-	return User.findOne(
+	return User.findOneAndUpdate(
 			{username: username},
-			{wordList: 1}
+			{$pull: {wordList: {"word": word}}},
+			{new: true}
 		)
 		.then(_user => {
-			_user.wordList.splice(_user.wordList.indexOf(
-				_user.wordList.find(w => w.word === word)
-			), 1)
-			_user.save()
-		})
-		.then( () => {
 			res.status(200).send()
 		})
 }
