@@ -97,7 +97,7 @@ const handlers = ( () => {
 								count: 1
 							})
 				}
-
+				word.render()
 				searchWordList.render()
 				$('#js-search-word').focus()
 			})
