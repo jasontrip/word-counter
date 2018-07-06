@@ -20,11 +20,13 @@ const login = (() => {
 					<input type="text"
 								 id="username"
 								 placeholder="username"
+								 value="test"
 								 aria-label="enter username" 
 								 required />
 					<input type="password"
 								 id="userPassword"
 								 placeholder="password"
+								 value="test123456"
 								 autocomplete="on"
 								 minlength="10" 
 								 required/>

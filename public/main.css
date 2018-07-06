@@ -51,12 +51,17 @@ main .word-list-item .assessment {
 	display: block;
 	float: none;
 }
+.login-wrapper {
+	min-height: 50px;
+	width: 100%;
+	margin-top: 90px;
+}
 #username, #userPassword, .js-log-in {
 	display: block;
 	margin: 10px auto 0 auto;
 }
 .landing-page-content-wrapper {
-	margin: 20px 0px 10px 0px;
+	margin: 0px 0px 10px 0px;
 }
 
 @media (min-width: 450px) {
@@ -66,7 +71,6 @@ main .word-list-item .assessment {
 	}
 	.login-screen {
 		float: right;
-		margin: 15px;
 	}
 	#username, #userPassword {
 		display: inline-block;
@@ -76,7 +80,7 @@ main .word-list-item .assessment {
 		display: inline-block;
 	}
 	.landing-page-content-wrapper {
-		margin: 100px 0px 10px 0px;
+		margin: 0px 0px 10px 0px;
 	}
 }
 
@@ -89,9 +93,7 @@ main .word-list-item .assessment {
 	height: 100%;
 	width: 100%;
 	background-color: rgb(212, 232, 206);
-	padding: 5px;
-	background-image: url("/img/learning.jpg");
-	background-size: cover;
+	padding: 0;
 	color: white;
 	overflow: scroll;
 }
@@ -105,27 +107,32 @@ main .word-list-item .assessment {
 }
 .app-explanation {
 	width: 100%;
-	min-height: 225px;
+	min-height: 500px;
 	background-color: rgba(43, 132, 17, .15);
+	background-image: url("/img/learning.jpg");
+	background-size: cover;
 	padding: 20px;
 	margin: 0 auto 0 auto;
 }
 .app-title {
-	font-size: 45px;
-	width: 300px;
-	font-weight: bold;
-	color: rgb(43, 132, 17);
-	margin: 0 auto 0 auto;
+	font-size: 60px;
+	width: 390px;
+	font-weight: 100;
+	color: rgb(255, 255, 255);
+	margin: 100px auto 0 auto;
+	letter-spacing: .03em;
 }
 .one-line-explanation {
 	font-size: 16px;
 	text-align: center;
 	margin-top: 5px;
+	letter-spacing: .06em;
 }
 .demo-account {
-	font-size: 14px;
-	text-align: center;
-	margin-top: 45px;
+	font-size: 16px;
+	text-align: right;
+	margin-top: 10px;
+	color: rgb(118, 222, 87);
 }
 
 .oxford-lookup {

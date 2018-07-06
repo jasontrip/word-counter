@@ -26,20 +26,23 @@ const render = (() => {
 		} else {
 			$('#app').html(`
 				<div class="landing-page">
-					<header class="login-screen"></header>
 
 					<div class="landing-page-content-wrapper">
 						<div class="app-explanation-and-oxford clearfix">
 							<div class="app-explanation">
-								<div class="app-title">Word Collector</div>
+								<div class="app-title">Word Counter</div>
 								<div class="one-line-explanation">
-									Keep track of all the words you know
-									and rate how well you know them.
+									<p>Want to know how well you know a language?</p>
+									<p>
+										Use this app to keep track of all the words you know and rate
+										how well you know them.
+									</p>
 								</div>
-								<div class="demo-account">
-									Demo account: username 'test', password: 'test123456'
+								<div class="login-wrapper">
+									<header class="login-screen"></header>
 								</div>
 							</div>
+
 							<div class="oxford-lookup">
 								<img class="oxford-logo" src="/img/oxford_logo.svg" />
 								<section class="word-and-definition"></section>
