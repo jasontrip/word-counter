@@ -43,13 +43,44 @@ const render = (() => {
 								</div>
 							</div>
 
-							<div class="oxford-lookup">
-								<img class="oxford-logo" src="/img/oxford_logo.svg" />
-								<section class="word-and-definition"></section>
-								<section class="word-list"></section>
+							<div class="screenshots">
+								<div class="screenshot-and-explanation">
+									<img class="word-list-screenshot" src="../img/word_list.png">
+									<p>Log in to see the words you know!</p>
+									<p>
+										Rate how well you know each word and see how many times you have been
+										exposed to it.
+									</p>
+								</div>
+
+								<div class="screenshot-and-explanation">
+									<img class="add-words-screenshot" src="../img/add_words.png">
+									<p>Adding words is easy!</p>
+									<p>
+										Click the green + sign, and paste text into the
+										text field. The app will use Google Natural Language Processing to parse the
+										words so you can add them to your list.
+									</p>
+								</div>
 							</div>
 						</div>
 						<div class="create-account"></div>
+						<div class="technical-explanation">
+							This project is my 2nd of three capstone projects at Thinkful.
+							The goal of this project was to create a full-stack application with
+							user account creation, JWT authentication and a RESTful API using Node.
+							The front-end is
+							using JQuery like the first capstone project. Capstone #3 will use a front-end
+							framework (React).
+
+							<br>
+
+							<p>
+								<a href="https://github.com/jasontrip/word-collector">
+									See the source code on github!
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
 			`)

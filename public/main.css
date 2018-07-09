@@ -63,6 +63,43 @@ main .word-list-item .assessment {
 .landing-page-content-wrapper {
 	margin: 0px 0px 10px 0px;
 }
+.screenshots {
+	background-color: white;
+	padding: 20px;
+}
+
+.screenshot-and-explanation {
+	width: 300px;
+	margin: 10px auto 10px auto;
+	color: black;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: .03em;
+	line-height: 1.2em;
+}
+.screenshot-and-explanation img {
+	width: 100%;
+	border: 1px solid black;
+}
+
+.technical-explanation {
+	background-color: black;
+	padding: 40px;
+	font-size: 16px;
+	letter-spacing: .03em;
+	line-height: 1.2em;
+}
+
+.technical-explanation a {
+	color: white;
+	text-decoration: none;
+}
+.technical-explanation a:visited {
+	color: white;
+}
+.technical-explanation a:hover {
+	text-decoration: underline;
+}
 
 @media (min-width: 450px) {
 	#username, #userPassword {
@@ -81,6 +118,10 @@ main .word-list-item .assessment {
 	}
 	.landing-page-content-wrapper {
 		margin: 0px 0px 10px 0px;
+	}
+	.screenshot-and-explanation {
+		width: 450px;
+		margin-bottom: 40px;
 	}
 }
 
@@ -172,7 +213,7 @@ main .word-list-item .assessment {
 	width: 290px;
 	color: black;
 	padding: 20px;
-	margin: 60px auto 20px auto;
+	margin: 60px auto 60px auto;
 }
 .create-account-invitation {
 	font-size: 14px;
