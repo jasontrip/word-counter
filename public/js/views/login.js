@@ -19,8 +19,8 @@ const login = (() => {
 				<form class="log-in-form">
 					<input type="text"
 								 id="username"
-								 placeholder="username"
 								 value="test"
+								 placeholder="username"
 								 aria-label="enter username" 
 								 required />
 					<input type="password"
@@ -37,6 +37,10 @@ const login = (() => {
 				</form>
 				<div class="login-error">
 					${store.loginError}
+				</div>
+
+				<div class="demo-account">
+					demo account: 'test', password: 'test123456'
 				</div>
 			`
 		}

@@ -6,11 +6,13 @@ html, body, #app, .left-nav {
 #app {
 	display: inline-block;
 	width: 100%;
+	max-width: 800px;
 }
 body {
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
+	background-color: gray;
 }
 body * {
 	box-sizing: border-box;
@@ -50,6 +52,8 @@ main .word-list-item .assessment {
 .login-screen {
 	display: block;
 	float: none;
+	max-width: 452px;
+	margin: 0 auto;
 }
 .login-wrapper {
 	min-height: 50px;
@@ -106,9 +110,6 @@ main .word-list-item .assessment {
 		margin-right: 15px;
 		padding-left: 10px;
 	}
-	.login-screen {
-		float: right;
-	}
 	#username, #userPassword {
 		display: inline-block;
 		margin-right: 15px;
@@ -157,11 +158,12 @@ main .word-list-item .assessment {
 }
 .app-title {
 	font-size: 60px;
-	width: 390px;
+	max-width: 100%;
 	font-weight: 100;
 	color: rgb(255, 255, 255);
 	margin: 100px auto 0 auto;
 	letter-spacing: .03em;
+	text-align: center;
 }
 .one-line-explanation {
 	font-size: 16px;
@@ -305,7 +307,8 @@ ul {
 
 .top-nav {
 	width: 100%;
-	min-width: 400px;
+	min-width: 300px;
+	max-width: 600px;
 	height: 65px;
 	margin-left: 0;
 	z-index: 1;
@@ -334,7 +337,7 @@ ul {
 }
 .top-nav .log-out-hover {
 	z-index: 10;
-	position: fixed;
+	position: absolute;
 	top: 20px;
 	right: 19px;
 	height: 35;
@@ -398,8 +401,9 @@ ul {
 }
 
 .page-wrap {
-	height: 100%;
 	width: 100%;
+	max-width: 600px;
+	background-color: white;
 }
 
 .indent-for-left-nav {
@@ -408,10 +412,10 @@ ul {
 }
 .word-list {
 	transition: margin-left .5s;
-	width: 400px;
+	width: 375px;
 }
 .word-list-heading {
-	width: 400px;
+	width: 375px;
 }
 .word-list-heading * {
 	display: inline-block;
@@ -522,7 +526,7 @@ main .exposures {
     z-index: 5;
     cursor: pointer;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
     right: 120px;
     top: 20px;
     height: 56px;
@@ -535,8 +539,8 @@ main .exposures {
 .add-icon {
   position: absolute;
   display: block;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 25%;
   -webkit-transform: translate(-12px, -12px);
   -ms-transform: translate(-12px, -12px);
   transform: translate(-12px, -12px);

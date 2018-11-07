@@ -9,9 +9,6 @@ const render = (() => {
 				<nav class="left-nav hidden"></nav>
 
 				<div class="page-wrap">
-					<div class="add-circle">
-						<i class="material-icons add-icon">add</i>
-					</div>
 
 					<header class="top-nav"></header>
 
@@ -76,7 +73,10 @@ const render = (() => {
 							<br>
 
 							<p>
-								<a href="https://github.com/jasontrip/word-collector">
+								<a
+									href="https://github.com/jasontrip/word-collector"
+									target="_blank"
+								>
 									See the source code on github!
 								</a>
 							</p>

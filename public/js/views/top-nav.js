@@ -15,6 +15,9 @@ const topNav = (() => {
 			<div class="current-view">
 				${wordCount}
 			</div>
+			<div class="add-circle">
+				<i class="material-icons add-icon">add</i>
+			</div>
 			<div class="log-out-hover">
 					<button class="js-log-out">Logout</button>
 			</div>
