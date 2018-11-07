@@ -404,6 +404,7 @@ ul {
 	width: 100%;
 	max-width: 600px;
 	background-color: white;
+	transition: margin-left .5s;
 }
 
 .indent-for-left-nav {
