@@ -402,6 +402,7 @@ ul {
 
 .page-wrap {
 	width: 100%;
+	min-height: 100vh;
 	max-width: 600px;
 	background-color: white;
 	transition: margin-left .5s;
