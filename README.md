@@ -1,5 +1,5 @@
 # Word Counter
-[try it out!](https://jt-words.herokuapp.com/)
+Thanks for checking out my repo. Live app view is no longer supported...I built this in 2018 and I stopped paying to keep it up.
 
 This app will allow a user to keep a list of words they know and rate how well they know them.
 	
